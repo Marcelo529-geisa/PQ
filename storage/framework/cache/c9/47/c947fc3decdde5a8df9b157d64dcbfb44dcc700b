@@ -1,4 +1,4 @@
-1720984394a:1:{s:19:"actualizar-foto.htm";a:11:{s:8:"fileName";s:19:"actualizar-foto.htm";s:7:"content";s:548:"title = "Actualizar foto"
+1720986110a:1:{s:19:"actualizar-foto.htm";a:11:{s:8:"fileName";s:19:"actualizar-foto.htm";s:7:"content";s:548:"title = "Actualizar foto"
 url = "/actualizar-foto/:id"
 layout = "fixed"
 is_hidden = 0
