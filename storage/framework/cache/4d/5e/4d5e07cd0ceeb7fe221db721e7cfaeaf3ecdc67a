@@ -1,0 +1,8 @@
+1720984394a:1:{s:13:"crear-any.htm";a:10:{s:8:"fileName";s:13:"crear-any.htm";s:7:"content";s:121:"title = "Crear any"
+url = "/crear-any/:estudio/:grupo"
+layout = "fixed"
+is_hidden = 0
+
+[Crear]
+==
+{% component 'Crear' %}";s:5:"mtime";i:1632348559;s:6:"markup";s:23:"{% component 'Crear' %}";s:4:"code";N;s:5:"title";s:9:"Crear any";s:3:"url";s:26:"/crear-any/:estudio/:grupo";s:6:"layout";s:5:"fixed";s:9:"is_hidden";s:1:"0";s:5:"Crear";a:0:{}}}

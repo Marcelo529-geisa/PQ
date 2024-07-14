@@ -1,0 +1,10 @@
+name: CuentasMail
+form: $/fede/portada/models/cuentasmail/fields.yaml
+modelClass: Fede\Portada\Models\CuentasMail
+defaultRedirect: fede/portada/cuentasmail
+create:
+    redirect: 'fede/portada/cuentasmail/update/:id'
+    redirectClose: fede/portada/cuentasmail
+update:
+    redirect: fede/portada/cuentasmail
+    redirectClose: fede/portada/cuentasmail

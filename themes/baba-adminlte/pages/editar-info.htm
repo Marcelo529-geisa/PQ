@@ -1,0 +1,23 @@
+title = "Editar Info"
+url = "/editar-info/:id"
+layout = "fixed"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Fede\Estudios\Models\Info"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "titulo"
+notFoundMessage = "Record not found"
+
+[EditarInfo]
+
+
+[viewBag]
+activeMenu = "paginas"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% component 'EditarInfo' %}

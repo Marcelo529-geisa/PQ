@@ -1,0 +1,48 @@
+title = "Crear Estudio"
+url = "/crear-estudio"
+layout = "fixed"
+is_hidden = 0
+
+[viewBag]
+activeMenu = "nuevo-estudio"
+
+[estudioform]
+
+[session]
+security = "user"
+allowedUserGroups[] = "superadmin"
+allowedUserGroups[] = "editores"
+allowedUserGroups[] = "colaboradores"
+allowedUserGroups[] = "registered"
+redirect = "acceder"
+==
+{% component 'session' %}
+<!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-6">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Informacíon general del estudio. </h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            
+            {% component 'estudioform' %}
+          </div>
+          <!-- /.box -->
+        </div>
+        <!--/.col (left) -->
+        <!-- right column -->
+        <div class="col-md-6">
+          <!-- Horizontal Form -->
+          <!-- /.box -->
+          <!-- general form elements disabled -->
+        </div>
+        <!--/.col (right) -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->

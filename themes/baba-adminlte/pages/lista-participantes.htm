@@ -1,0 +1,90 @@
+title = "Lista participantes"
+url = "/lista-participantes/:id"
+layout = "fixed"
+is_hidden = 0
+
+[viewBag]
+activeMenu = "participantes"
+
+[builderDetails]
+modelClass = "Fede\Estudios\Models\Estudio"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "titulo"
+notFoundMessage = "Record not found"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+<div class="row">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+              <h3 class="box-title">     
+                {% if record %}
+                    Participantes del estudio "{{record.titulo}}"
+                {% else %}
+                    {{ notFoundMessage }}
+                {% endif %}
+             </h3>
+        </div>
+            <!-- /.box-header -->
+    </div>
+</div>
+   <button  class="btn btn-primary" onclick="javascript:location.href='/PQ2/crear-any/{{record.id}}/1'">Agregar</button> 
+<hr>
+
+   <div class="row">
+      <!-- Left col -->
+      <section class="col-lg-12">
+          <div class="box-body">
+            <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+         
+                <table id="example2" class="table table-bordered table-hover">
+              <thead>
+              <tr>
+                  <th>Título</th>
+                <th>Autor</th>
+                <th>Contacto</th>                  
+                <th>Fecha Creación</th>
+                <th>user_id</th>
+              </tr>
+              </thead>
+              <tbody>
+             
+{% for user in record.users %}
+{% set mostrar ='false' %}
+{% for grupos in user.groups %}
+    {% if grupos.id in [1] %}
+        {% set mostrar ='true' %}
+    {% endif %}
+{% endfor %}
+{% if mostrar == 'true' %}
+    <tr>
+                <td>  
+              {{ user.username }}</td>
+                <td>
+                 {{ user.email }}
+                </td>
+                <td></td>
+                <td> </td>
+                <td>{{user.id}}</td>
+              </tr>
+     
+              {% else %}
+      {{ noRecordsMessage }}
+{% endif %}
+  {% endfor %}
+
+            
+              </tbody>
+             
+            </table>
+        
+            
+            
+          </div>
+          <!-- /.box-body -->
+          
+        </div>
+        <!-- /.box -->

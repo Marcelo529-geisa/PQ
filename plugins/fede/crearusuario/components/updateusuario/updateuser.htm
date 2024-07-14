@@ -1,0 +1,59 @@
+
+<div class="row">
+  <div class="box box-primary">
+      <div class="box-header with-border">
+            <h3 class="box-title">     
+              
+                  Actualizando  {{user.name}}
+              
+              
+           </h3>
+           <p>Complete el formulario con sus datos para que el resto de los otros usuarios puedan conocerlo.</p>
+      </div>
+          <!-- /.box-header -->
+  </div>
+</div>
+
+<form role="form" data-request="UpdateUsuario::onSend" data-request-files data-request-flash>
+  <!-- <input type="hidden" name="_handler" value="onSave">  -->
+  {{ form_token() }}
+  {{ form_sessionKey() }}
+    <div class="form-group">
+        <label for="accountName">Full Name</label>
+        <input name="name" type="text" class="form-control" id="accountName" value="{{ user.name }}">
+    </div>
+
+    <div class="form-group">
+        <label for="accountEmail">Email</label>
+        <input name="email" type="email" class="form-control" id="accountEmail" value="{{ user.email }}">
+    </div>
+    <label >Imagen</label>
+
+      <div class="form-group">
+        <div id="imageResult">
+          <img src="{{ user.avatar.path }}"  style="width: 200px; height: auto;" alt="" >
+
+        </div>
+        <input type="file"  class="form-control" name="avatar" id="avatar" data-request="UpdateUsuario::onImageUpload"  data-request-files data-request-flash >
+      </div>
+
+    <div class="form-group">
+        <label >Antecedentes</label>
+        <textarea name="bio"  class="form-control" rows="14" cols="100" >{{user.bio}}</textarea>
+    </div>
+    
+    
+
+
+    {% if updateRequiresPassword %}
+        <p>To change these details, please confirm your current password.</p>
+        <div class="form-group">
+            <label for="accountPasswordCurrent">Current Password <small class="text-danger">* required</small></label>
+            <input name="password_current" type="password" class="form-control" id="accountPasswordCurrent">
+        </div>
+    {% endif %}
+
+    <button type="submit" class="btn btn-default">Save</button>
+
+{{ form_close() }}
+<div id="result"></div>

@@ -1,0 +1,34 @@
+<h2>
+    Agregando un usuario al grupo de {{grupo}}
+</h2>
+
+<form data-request="Crear::onSend" class="contact-form" data-request-validate data-request-flash>
+    {% if estudio %}
+    <input class="form-control" name="estudio" id="estudio" value="{{estudio}}" type="hidden">
+  {% endif %}
+    <div class="box-body">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Nombre</label>
+        <span data-validate-for="name" style="color:red;" ></span>
+        <input class="form-control" name="name" id="name" value="{{ usuario_up.name }}" placeholder="nombre usuario una sola palabra">
+      </div>
+      <!-- textarea -->
+      <div class="form-group">
+        <label>email</label>
+        <span data-validate-for="email" style="color:red;" ></span>
+  
+        <input id="email" name="email" class="form-control" placeholder="email ." value="{{ usuario_up.email}}"></textarea>
+      </div>
+     
+    </div>
+  
+  
+  
+    <div class="box-footer">
+      <button type="submit" data-attach-loading class="btn btn-primary">Agregar</button>
+    </div>
+  
+    {% flash success %}
+    <p>{{message}}</p>
+    {% endflash %}
+  </form>

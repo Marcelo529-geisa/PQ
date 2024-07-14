@@ -1,0 +1,24 @@
+title = "Actualizar foto"
+url = "/actualizar-foto/:id"
+layout = "fixed"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Fede\Portada\Models\Portada"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "id"
+notFoundMessage = "Record not found"
+
+[Update]
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+    {{ record.titulo }}
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}
+{% component 'Update' %}

@@ -1,0 +1,16 @@
+fields:
+    titulo:
+        label: Titulo
+        span: auto
+        type: text
+    cuerpo:
+        label: 'Texto / Cuerpo'
+        size: ''
+        span: auto
+        type: richeditor
+    estudio:
+        label: estudio
+        nameFrom: titulo
+        descriptionFrom: description
+        span: auto
+        type: relation

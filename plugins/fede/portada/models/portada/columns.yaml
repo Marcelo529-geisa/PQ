@@ -1,0 +1,9 @@
+columns:
+    titulo:
+        label: tiitulo
+        type: text
+        sortable: true
+    fileupload1:
+        label: foto
+        type: partial
+        path: ~/plugins/fede/portada/models/portada/_foto.htm

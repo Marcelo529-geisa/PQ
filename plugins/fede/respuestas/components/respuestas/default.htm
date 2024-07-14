@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="app" ng-keyup="$broadcast('my:keyup', $event)">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>HtmlQ</title>
+
+        <script src="{{'assets/assets4/src/jquery.min.js'|theme}}" type="text/javascript"></script>
+        <script src="{{'assets/assets4/src/jquery-ui.min.js'|theme}}" type="text/javascript"></script>
+        <script src="{{'assets/assets4/src/jquery.ui.touch-punch.min.js'|theme}}" type="text/javascript"></script>
+        <script src="{{'assets/assets4/src/jquery-dateFormat.min.js'|theme}}" type="text/javascript"></script>
+        <script src="{{'assets/assets4/src/bootstrap.min.js'|theme}}" type="text/javascript"></script>
+        <script src="{{'assets/assets4/src/angular.min.js'|theme}}" type="text/javascript"></script>
+        <script src="{{'assets/assets4/src/angular-ui-router.min.js'|theme}}" type="text/javascript"></script>
+        <script src="{{'assets/assets4/src/ui-bootstrap-custom-tpls.min.js'|theme}}" type="text/javascript"></script>
+        <script src="{{'assets/assets4/src/xml2json.min.js'|theme}}" type="text/javascript"></script>
+        <script src="{{'assets/assets4/src/jsonpath.js'|theme}}" type="text/javascript"></script>
+        <script src="{{'assets/assets4/src/underscore-min.js'|theme}}" type="text/javascript"></script>
+        <script src="{{'assets/assets4/src/htmlq.js'|theme}}" type="text/javascript"></script>
+
+        <link rel="stylesheet" href="{{'assets/assets4/stylesheets/bootstrap.min.css'|theme}}">
+        <link rel="stylesheet" href="{{'assets/assets4/stylesheets/htmlq.css'|theme}}">
+
+        <!-- HTML5 shim and Respond.js'|theme}} for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js'|theme}} doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="{{'assets/assets4/src/html5shiv.min.js'|theme}}"></script>
+          <script src="{{'assets/assets4/src/es5-shim.min.js'|theme}}"></script>
+          <script src="{{'assets/assets4/src/respond.min.js'|theme}}"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div ui-view></div>
+    </body>
+</html>

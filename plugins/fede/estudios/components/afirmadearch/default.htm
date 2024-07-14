@@ -1,0 +1,23 @@
+<h3>Agregando afirmaciones por lote <br>al estudio: <strong>{{estudio_dat.titulo}}</strong></h1>
+<hr>
+<form role="form" data-request="AfirmaDeArch::onSave" data-request-validate data-request-flash >
+    <div class="box-body">
+     
+       <!-- textarea -->
+      <div class="form-group">
+        <label>copie y pegue en la caja de texto todas las afirmaciones:</label>
+        <textarea id = "texto" name="texto" class="form-control" rows="4" placeholder="Afirmo tal cosa. &#10No afirmo tal otra. &#10Quizas no estoy seguro de nada.&#10Todo va a estar bien."></textarea>
+      </div>
+      
+    
+      
+    </div>
+    <!-- /.box-body -->
+
+    <div class="box-footer">
+      <button type="submit" data-attach-loading class="btn btn-primary">Procesar</button>
+    </div>
+    {% flash success %}
+     <p>{{message}}</p>
+    {% endflash %}
+  </form>

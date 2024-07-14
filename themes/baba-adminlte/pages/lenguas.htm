@@ -1,0 +1,26 @@
+title = "lenguas"
+url = "/lenguas/:id"
+is_hidden = 0
+==
+<?php
+use October\Rain\Parse\Syntax\Parser as SyntaxParser;
+use Fede\Portada\Models\Lenguages as Lenguages;
+
+
+function onInit() {
+    $lenguaje=Lenguages::find(1)->get()->first()->toArray();
+   
+    $myfile = fopen("/var/www/html/PQ2/themes/baba-adminlte/assets/assets4/settings/lang.xml", "r") or die("Unable to open file!");
+    $contenido= fread($myfile,filesize("/var/www/html/PQ2/themes/baba-adminlte/assets/assets4/settings/lang.xml"));
+
+    fclose($myfile);
+
+    //$contenido='<h1>{text name="websiteName" label="Website Name"}Our wonderful website{/text}</h1>';
+$syntax = SyntaxParser::parse($contenido);
+$xml_f=$syntax->render($lenguaje);
+//echo $xml_f;die('dai');
+return Response::make($xml_f)->header('Content-Type', 'text/xml');
+
+}
+?>
+==

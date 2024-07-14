@@ -1,0 +1,325 @@
+1720984394a:1:{s:11:"paginas.htm";a:11:{s:8:"fileName";s:11:"paginas.htm";s:7:"content";s:5258:"title = "Páginas"
+url = "/paginas/:scope"
+layout = "fixed"
+is_hidden = 0
+
+[builderList]
+modelClass = "Fede\Estudios\Models\Info"
+scope = "scopeUsuario"
+scopeValue = "{{ :scope }}"
+displayColumn = "titulo"
+noRecordsMessage = "No records found"
+detailsPage = "editar-info"
+detailsKeyColumn = "id"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+
+
+[viewBag]
+activeMenu = "paginas"
+==
+use Fede\Estudios\Models\Info;
+
+function onDelete()
+{
+
+  $info=  Info::find(Input::get('info-id'));
+  
+  $tag="#info-".$info->id;
+  $info->delete();
+  return [ $tag => ""];
+}
+==
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+
+<div class="row">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+              <h3 class="box-title">     
+                
+                     Info del estudio "{{this.session.get('estudio-titulo')}}"
+                
+             </h3>
+        </div>
+            <!-- /.box-header -->
+    </div>
+</div>
+   <button  class="btn btn-primary" onclick="javascript:location.href='{{ url ('crear-pagina/')}}/{{this.session.get('estudio-id')}}'">Agregar</button> 
+<hr>
+    <section class="content-header">
+
+
+   <div class="box-body">
+            <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+            
+         
+                <table id="example2" class="table table-bordered table-hover">
+              <thead>
+              <tr>
+              <th>Id</th>                  
+                  <th>Titulo</th>
+                  <th>Texto</th>
+                <th>Editar</th>
+                <th>Eliminar</th>                  
+                
+                
+              </tr>
+              </thead>
+              <tbody>
+              {% for record in records %}
+    <tr id ="info-{{record.id}}">
+    <td>
+    {{record.id}}
+                </td>
+                <td>  {% spaceless %}
+              {% if detailsPage %}
+                  <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+              {% endif %}
+
+              {{ record.titulo }}
+              {% if detailsPage %}
+                  </a>
+              {% endif %}
+          {% endspaceless %}</td>
+                <td>
+                {{ html_strip(record.cuerpo) }}
+                
+                
+                </td>
+                <td>{% spaceless %}
+              {% if detailsPage %}
+                  <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+              {% endif %}
+
+            <i class="fa fa-edit"></i>
+              {% if detailsPage %}
+                  </a>
+              {% endif %}
+          {% endspaceless %}</td>
+                <td> 
+                    <button class="btn btn-warning"><a href="" data-request="onDelete"
+                        data-request-confirm="Esta seguro de borrar?"
+                        data-request-data="info-id: {{record.id}}">Borrar</a></button>
+                </td>
+                
+              </tr>
+     
+              {% else %}
+      {{ noRecordsMessage }}
+  {% endfor %}
+
+            
+              </tbody>
+             
+            </table>
+        
+            
+            
+          </div>
+          <!-- /.box-body -->
+          
+        </div>
+        <!-- /.box -->
+
+
+
+      </section>
+      <!-- /.Left col -->
+      <!-- right col (We are only adding the ID to make the widgets sortable)-->
+      <!-- right col -->
+       
+<ul class="record-list">
+    {% for record in records %}
+        <li>
+            {# Use spaceless tag to remove spaces inside the A tag. #}
+            {% spaceless %}
+                {% if detailsPage %}
+                    <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+                {% endif %}
+
+                {{ attribute(record, displayColumn) }}
+
+                {% if detailsPage %}
+                    </a>
+                {% endif %}
+            {% endspaceless %}
+        </li>
+    {% else %}
+        <li class="no-data">{{ noRecordsMessage }}</li>
+    {% endfor %}
+</ul>
+
+{% if records.lastPage > 1 %}
+    <ul class="pagination">
+        {% if records.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..records.lastPage %}
+            <li class="{{ records.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if records.lastPage > records.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}";s:5:"mtime";i:1632348559;s:6:"markup";s:4660:"{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+
+<div class="row">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+              <h3 class="box-title">     
+                
+                     Info del estudio "{{this.session.get('estudio-titulo')}}"
+                
+             </h3>
+        </div>
+            <!-- /.box-header -->
+    </div>
+</div>
+   <button  class="btn btn-primary" onclick="javascript:location.href='{{ url ('crear-pagina/')}}/{{this.session.get('estudio-id')}}'">Agregar</button> 
+<hr>
+    <section class="content-header">
+
+
+   <div class="box-body">
+            <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+            
+         
+                <table id="example2" class="table table-bordered table-hover">
+              <thead>
+              <tr>
+              <th>Id</th>                  
+                  <th>Titulo</th>
+                  <th>Texto</th>
+                <th>Editar</th>
+                <th>Eliminar</th>                  
+                
+                
+              </tr>
+              </thead>
+              <tbody>
+              {% for record in records %}
+    <tr id ="info-{{record.id}}">
+    <td>
+    {{record.id}}
+                </td>
+                <td>  {% spaceless %}
+              {% if detailsPage %}
+                  <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+              {% endif %}
+
+              {{ record.titulo }}
+              {% if detailsPage %}
+                  </a>
+              {% endif %}
+          {% endspaceless %}</td>
+                <td>
+                {{ html_strip(record.cuerpo) }}
+                
+                
+                </td>
+                <td>{% spaceless %}
+              {% if detailsPage %}
+                  <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+              {% endif %}
+
+            <i class="fa fa-edit"></i>
+              {% if detailsPage %}
+                  </a>
+              {% endif %}
+          {% endspaceless %}</td>
+                <td> 
+                    <button class="btn btn-warning"><a href="" data-request="onDelete"
+                        data-request-confirm="Esta seguro de borrar?"
+                        data-request-data="info-id: {{record.id}}">Borrar</a></button>
+                </td>
+                
+              </tr>
+     
+              {% else %}
+      {{ noRecordsMessage }}
+  {% endfor %}
+
+            
+              </tbody>
+             
+            </table>
+        
+            
+            
+          </div>
+          <!-- /.box-body -->
+          
+        </div>
+        <!-- /.box -->
+
+
+
+      </section>
+      <!-- /.Left col -->
+      <!-- right col (We are only adding the ID to make the widgets sortable)-->
+      <!-- right col -->
+       
+<ul class="record-list">
+    {% for record in records %}
+        <li>
+            {# Use spaceless tag to remove spaces inside the A tag. #}
+            {% spaceless %}
+                {% if detailsPage %}
+                    <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+                {% endif %}
+
+                {{ attribute(record, displayColumn) }}
+
+                {% if detailsPage %}
+                    </a>
+                {% endif %}
+            {% endspaceless %}
+        </li>
+    {% else %}
+        <li class="no-data">{{ noRecordsMessage }}</li>
+    {% endfor %}
+</ul>
+
+{% if records.lastPage > 1 %}
+    <ul class="pagination">
+        {% if records.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..records.lastPage %}
+            <li class="{{ records.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if records.lastPage > records.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}";s:4:"code";s:184:"use Fede\Estudios\Models\Info;
+
+function onDelete()
+{
+
+  $info=  Info::find(Input::get('info-id'));
+  
+  $tag="#info-".$info->id;
+  $info->delete();
+  return [ $tag => ""];
+}";s:5:"title";s:8:"Páginas";s:3:"url";s:15:"/paginas/:scope";s:6:"layout";s:5:"fixed";s:9:"is_hidden";s:1:"0";s:11:"builderList";a:9:{s:10:"modelClass";s:25:"Fede\Estudios\Models\Info";s:5:"scope";s:12:"scopeUsuario";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:6:"titulo";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:11:"editar-info";s:16:"detailsKeyColumn";s:2:"id";s:19:"detailsUrlParameter";s:2:"id";s:10:"pageNumber";s:11:"{{ :page }}";}s:7:"viewBag";a:1:{s:10:"activeMenu";s:7:"paginas";}}}

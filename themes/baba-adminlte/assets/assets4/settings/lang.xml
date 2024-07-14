@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+//
+// In order to translate HtmlQ or to customize the texts,
+// just change the text between the opening and the closing
+// tag. The attribute 'id' is the name of the variable
+// and must remain unchanged.
+//
+// You can use HTML-tags, but you have to braces instead
+// of the normal angle brackets, otherwise the import will fail.
+// Example: {b}bold{/b}
+//
+// If your are using German Umlauts and other special
+// characters, make sure, that you save this XML-file
+// as an UTF-8-document. White-space inbetween the
+// nodes are ignored. Any white-space within the text-
+// nodes, including leading or trailing whitespace and
+// line breaks, is preserved.
+//
+// ===================================================
+//
+-->
+
+<language version="1.0" htmlParse="true">
+
+  <!-- misc -->
+  <item id="btnContinue">{text name="btncontinue" label="btncontinue"}{/text}</item>
+  <item id="btnclose">{text name="btnclose" label="btnclose"}{/text}</item>
+  <item id="btnHelp">{text name="btnhelp" label="btnhelp"}{/text}</item>
+  <item id="btnAgreement">{text name="btnagreement" label="btnagreement"}{/text}</item>
+  <item id="btnNeutral">{text name="btnneutral" label="btnneutral"}{/text}</item>
+  <item id="btnDisagreement">{text name="btndisagreement" label="btndisagreement"}{/text}</item>
+  <item id="btnTransfer">{text name="btntransfer" label="btntransfer"}{/text}</item>
+  <item id="btnMail">{text name="btnMail" label="btnMail"}Send via email{/text}</item>
+  <item id="btnPrint">{text name="btnprint" label="btnprint"}{/text}</item>
+  <item id="btnExit">{text name="btnexit" label="btnexit"}{/text}</item>
+  <item id="selectItem">{text name="selectitem" label="selectitem"}{/text}</item>
+
+  <!-- Warning when user is trying to leave the page (this item was added for HtmlQ) -->
+  <item id="leaveSiteWarning">{text name="leavesitewarning" label="leavesitewarning"}{/text}</item>
+
+  <!-- HtmlQ only: In-App Back Button -->
+  <item id="backButton">{text name="backbutton" label="backbutton"}{/text}</item>
+  <item id="fillInRequiredFields">{text name="fillinrequiredfields" label="fillinrequiredfields"}{/text}</item>
+
+  <!-- errors -->
+  <item id="errorHead">{text name="errorhead" label="errorhead"}{/text}</item>
+  <item id="errorWindowTooSmall">{text name="errorwindowtoosmall" label="errorwindowtoosmall"}{/text}</item>
+
+  <!-- welcome screen (leave blank to skip screen) -->
+  <item id="welcomeHead">{text name="welcomehead" label="welcomehead"}{/text}</item>
+  <item id="welcomeText">{text name="welcometext" label="welcometext"}{/text}</item>
+
+  <!-- user login, only displayed if access is restricted (see config-file) -->
+  <item id="loginHead">{text name="loginhead" label="loginhead"}{/text}</item>
+  <item id="loginText">{text name="logintext" label="logintext"}{/text}</item>
+  <item id="loginFormHeader">{text name="loginformheader" label="loginformheader"}{/text}</item>
+  <item id="loginNoInput">{text name="loginnoinput" label="loginnoinput"}{/text}</item>
+  <item id="loginInvalidInput">{text name="logininvalidinput" label="logininvalidinput"}{/text}</item>
+  <item id="loginNoConnection">{text name="loginnoconnection" label="loginnoconnection"}{/text}</item>
+
+  <!-- introduction (leave blank to skip popup) -->
+  <item id="introHead">{text name="introhead" label="introhead"}{/text}</item>
+  <item id="introText">{text name="introtext" label="introtext"}{/text}</item>
+
+  <!-- step1: rough sorting into three piles (leave blank to skip popup)-->
+  <item id="step1Head">{text name="step1head" label="step1head"}{/text}</item>
+  <item id="step1Text">{text name="step1text" label="step1text"}{/text}</item>
+
+  <!-- step2: sorting (leave blank to skip popup) -->
+  <item id="step2Head">{text name="step2head" label="step2head"}{/text}</item>
+  <item id="step2Text">{text name="step2text" label="step2text"}{/text}</item>
+
+  <!-- step3: check sorting, only displayed if showStep3== true (see config-file; leave blank to skip popup)-->
+  <item id="step3Head">{text name="step3head" label="step3head"}{/text}</item>
+  <item id="step3Text">{text name="step3text" label="step3text"}{/text}</item>
+
+  <!-- step4: comments on best/worst rated statements, only displayed if showStep4== true (see config-file; leave blank to skip popup) -->
+  <item id="step4Head">{text name="step4head" label="step4head"}{/text}</item>
+  <item id="step4Text">{text name="step4text" label="step4text"}{/text}</item>
+
+  <!-- step5: dditional questions, only displayed if showStep5== true (see config-file; leave blank to skip popup)-->
+  <item id="step5Head">{text name="step5head" label="step5head"}{/text}</item>
+  <item id="step5Text">{text name="step5text" label="step5text"}{/text}</item>
+
+  <!-- data transfer, only displayed if submitUrl is not blank (see config-file) -->
+  <item id="transferHead">{text name="transferhead" label="transferhead"}{/text}</item>
+  <item id="transferText">{text name="transfertext" label="transfertext"}{/text}</item>
+  <item id="transferFailed">{text name="transferfailed" label="transferfailed"}{/text}</item>
+  <item id="transferOk">{text name="transferok" label="transferok"}{/text}</item>
+
+  <!-- send data via mail, only displayed if submitUrl is blank (see config-file) -->
+  <item id="mailHead">{text name="mailhead" label="mailhead"}{/text}</item>
+  <item id="mailText">{text name="mailtext" label="mailtext"}{/text}</item>
+
+  <!-- e-mail-body -->
+  <item id="mailBody">{text name="mailbody" label="mailbody"}{/text}</item>
+
+  <!-- print out -->
+  <item id="printoutText">{text name="printouttext" label="printouttext"}{/text}</item>
+
+</language>

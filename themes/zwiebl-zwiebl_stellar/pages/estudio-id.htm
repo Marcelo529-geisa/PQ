@@ -1,0 +1,45 @@
+title = "estudio-id"
+url = "/estudio-id/:id"
+layout = "stellar"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Fede\Estudios\Models\Estudio"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "titulo"
+notFoundMessage = "Record not found"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+  {% for record in record.info %}
+
+    <section id="one" class="main">
+    <div class="spotlight">
+        <div class="content">
+            <header class="major">
+                <h2>
+            {% spaceless %}
+                {% if detailsPage %}
+                    <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+                {% endif %}
+
+                {{ attribute(record, displayColumn) }}
+
+                {% if detailsPage %}
+                    </a>
+                {% endif %}
+            {% endspaceless %}
+    
+            </h2>
+            </header>
+            <p>{{ record.cuerpo|raw }}</p>
+            
+        </div>
+
+    </div>
+    </section>
+
+    {% endfor %}

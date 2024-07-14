@@ -1,0 +1,10 @@
+name: Lenguaje
+form: $/fede/portada/models/lenguages/fields.yaml
+modelClass: Fede\Portada\Models\Lenguages
+defaultRedirect: fede/portada/lenguaje
+create:
+    redirect: 'fede/portada/lenguaje/update/:id'
+    redirectClose: fede/portada/lenguaje
+update:
+    redirect: fede/portada/lenguaje
+    redirectClose: fede/portada/lenguaje

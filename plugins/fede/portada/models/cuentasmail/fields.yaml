@@ -1,0 +1,17 @@
+fields:
+    mail:
+        label: e-mail
+        span: auto
+        type: text
+    contra:
+        label: Contraseña
+        span: auto
+        type: password
+    protocolo:
+        label: Protocolo
+        span: auto
+        type: text
+    puerto:
+        label: Puerto
+        span: auto
+        type: number

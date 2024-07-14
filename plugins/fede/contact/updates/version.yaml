@@ -1,0 +1,5 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table fede_contact_'
+    - builder_table_create_fede_contact_.php

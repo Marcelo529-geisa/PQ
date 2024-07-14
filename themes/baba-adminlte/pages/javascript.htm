@@ -1,0 +1,37 @@
+title = "javascript"
+url = "/javascript/:id"
+is_hidden = 0
+==
+
+
+use October\Rain\Parse\Syntax\Parser as SyntaxParser;
+use RainLab\Translate\Classes\Translator;
+
+function onInit() {
+    $translator = Translator::instance();
+    $activeLocale = $translator->getLocale();
+
+    if ($activeLocale=='en')
+       {
+        $idioma=1;
+       }
+    if ($activeLocale=='es')
+    {
+        $idioma=2;
+
+    }    
+    
+        
+    $myfile = fopen("/var/www/html/themes/baba-adminlte/assets/assets4/src/htmlqB.js", "r") or die("Unable to open file!");
+    $contenido= fread($myfile,filesize("/var/www/html/themes/baba-adminlte/assets/assets4/src/htmlqB.js"));
+
+    fclose($myfile);
+    
+
+$syntax = SyntaxParser::parse($contenido);
+$respuesta= $syntax->render(['websiteName' => $this->param('id'),'idioma'=>$idioma]);
+//return Response::make($respuesta);//->header('Content-Type','text/html');
+echo $respuesta;
+//return Response::make($respuesta)->header('Content-Type','text/javascript');
+}
+==

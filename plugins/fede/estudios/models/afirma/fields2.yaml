@@ -1,0 +1,6 @@
+fields:
+    texto:
+        label: 'Texto de la Afirmacion'
+        span: auto
+        size: ''
+        type: textarea

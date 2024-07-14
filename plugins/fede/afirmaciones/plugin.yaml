@@ -1,0 +1,6 @@
+plugin:
+    name: 'fede.afirmaciones::lang.plugin.name'
+    description: 'fede.afirmaciones::lang.plugin.description'
+    author: Fede
+    icon: oc-icon-adjust
+    homepage: ''

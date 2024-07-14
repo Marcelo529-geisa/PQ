@@ -1,0 +1,52 @@
+title = "Resultados"
+url = "/resultados/:id"
+layout = "fixed"
+is_hidden = 0
+
+[viewBag]
+activeMenu = "Resultados"
+
+[builderDetails]
+modelClass = "Fede\Estudios\Models\Estudio"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "titulo"
+notFoundMessage = "Record not found"
+==
+<?php
+use Fede\Estudios\Models\Estudio as Estudio;
+use Fede\Estudios\Models\Respuesta as Respuesta;
+use October\Rain\Auth\Models\User as User;
+
+function onInit() {
+    $id=$this->param('id');
+    $this['jotason']=  array();
+    $this['respuestas']=Respuesta::where('estudios_id',$id)->get();
+    
+//die();    
+}
+?>
+==
+<div class="row">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+              <h3 class="box-title">     
+                {% if record %}
+                    Respuestas del estudio "{{record.titulo}}"
+                {% else %}
+                    {{ notFoundMessage }}
+                {% endif %}
+             </h3>
+        </div>
+            <!-- /.box-header -->
+    </div>
+</div>
+   <button  class="btn btn-primary" onclick="javascript:location.href='{{ url ('/') }}/punto_dat/{{record.id}}'"><i class="fa fa-arrow-down"></i> .dat</button> 
+   <button  class="btn btn-primary" onclick="javascript:location.href='{{record.id}}'"><i class="fa fa-arrow-down"></i> .json</button> 
+<hr>
+{% for key,respuesta in respuestas %}
+
+    
+
+    <li>{{respuesta.user_id}} --> {{ respuesta.respuestas }}</li>
+    {% endfor %}

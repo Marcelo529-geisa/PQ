@@ -1,0 +1,30 @@
+<div>
+    <form role="form"
+    data-request="onUpdate"
+    data-request-success=""
+    data-request-validate data-request-flash>
+    <div class="box-body">
+        <div class="form-group">
+          <label for="espanol">espanol</label>
+          <textarea id = "espanol" name="espanol" class="form-control" rows="3">{{espanol}}</textarea>
+        </div>
+         <!-- textarea -->
+        <div class="form-group">
+          <label>Ingles</label>
+          <textarea id = "ingles" name="ingles" class="form-control" rows="3">{{ingles}}</textarea>
+        </div>
+       
+    </div>
+
+
+  
+
+ 
+<div class="form-group">
+    <button class="btn btn-primary" type="submit" value="register">Actualizar</button>
+    <button class="btn btn-warning"><a href="{{ url ('afirmaciones/')}}/{{estudio_id}}"> Cancelar</a> </button>  
+
+</div>
+{{ form_close() }}
+</div>
+

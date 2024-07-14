@@ -1,0 +1,31 @@
+<form role="form" data-request="Update::onSend" data-request-files data-request-flash>
+  <input type="hidden" name="_handler" value="onSave">  
+  {{ form_token() }}
+  {{ form_sessionKey() }}
+  <div class="box-body">
+
+        <input  class="form-control" name= "id" id="id" value="{{record.id}}" type="hidden">
+
+
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Título</label>
+        <input  class="form-control" name="titulo" id="titulo" value="{{ record.titulo}}">
+      </div>
+       <!-- textarea -->
+      <div class="form-group">
+        <div id="imageResult">
+          <img src="{{ record.fileupload1.path }}"  style="width: 200px; height: auto;" alt="" >
+
+        </div>
+        <input type="file"  class="form-control" name="foto" id="foto" data-request="Update::onImageUpload"  data-request-files data-request-flash >
+      </div>
+     
+    </div>
+    <!-- /.box-body -->
+
+    <div class="box-footer">
+      <button type="submit" data-attach-loading class="btn btn-primary">Grabar</button>
+    </div>
+    
+  </form>

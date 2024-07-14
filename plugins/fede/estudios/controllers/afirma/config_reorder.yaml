@@ -1,0 +1,4 @@
+title: Afirma
+modelClass: Fede\Estudios\Models\Afirma
+toolbar:
+    buttons: reorder_toolbar

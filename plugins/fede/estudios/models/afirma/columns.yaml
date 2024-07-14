@@ -1,0 +1,12 @@
+columns:
+    id:
+        label: id
+        type: number
+    texto:
+        label: texto
+        type: text
+        searchable: true
+    estudios_id:
+        label: estdudio_id
+        type: number
+        sortable: true

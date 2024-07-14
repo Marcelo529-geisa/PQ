@@ -1,0 +1,14 @@
+<p>
+    Hola, 
+    Tienes una invitación de {{remitente.name}} / {{remitente.email}} para participar de un estudio Q.
+    Si quieres participar usa este link:<br>
+    <a href="{{url('acceder')}}">Ir al sitio</a>     <br><br>
+    e ingresa estos datos para ingresar: <br><br>
+     <strong> email: </strong>{{ user.email }} <br><br> 
+     {% if pass %}
+     <strong>password: </strong>{{ pass }}
+     <br>
+     <strong>¡importante!: </strong> después de ingresar con estos datos al sitio recuerda cambiar la contraseña, pulsando en tu nombre arriba a la derecha de la pantalla.
+    {% endif %}
+</p>
+

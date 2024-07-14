@@ -1,0 +1,10 @@
+columns:
+    titulo:
+        label: titulo
+        type: text
+        searchable: true
+        sortable: true
+    cuerpo:
+        label: 'texto / cuerpo'
+        type: text
+        searchable: true

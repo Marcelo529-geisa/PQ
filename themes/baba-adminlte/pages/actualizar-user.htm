@@ -1,0 +1,17 @@
+title = "Actualizar User"
+url = "/actualizar-user/:id"
+layout = "fixed"
+is_hidden = 0
+
+[ActualizarUsuario]
+
+==
+use RainLab\User\Models\UserGroup as User;
+function onInit() {
+
+$this['user'] = User::find(Session::get('user-id') );
+}
+
+
+==
+{% component 'ActualizarUsuario' %}

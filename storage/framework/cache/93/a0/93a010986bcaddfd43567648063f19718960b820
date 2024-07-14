@@ -1,0 +1,8 @@
+1720984394a:1:{s:17:"fotos-portada.htm";a:10:{s:8:"fileName";s:17:"fotos-portada.htm";s:7:"content";s:117:"title = "fotos-portada"
+url = "/fotos-portada"
+layout = "fixed"
+is_hidden = 0
+
+[Portada]
+==
+{% component 'Portada' %}";s:5:"mtime";i:1632348559;s:6:"markup";s:25:"{% component 'Portada' %}";s:4:"code";N;s:5:"title";s:13:"fotos-portada";s:3:"url";s:14:"/fotos-portada";s:6:"layout";s:5:"fixed";s:9:"is_hidden";s:1:"0";s:7:"Portada";a:0:{}}}

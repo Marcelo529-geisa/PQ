@@ -1,0 +1,177 @@
+fields:
+    btncontinue:
+        label: btnContinue
+        span: auto
+        type: text
+    btnclose:
+        label: btnclose
+        span: auto
+        type: text
+    btnhelp:
+        label: btnHelp
+        span: auto
+        type: text
+    btnagreement:
+        label: btnAgreement
+        span: auto
+        type: text
+    btndisagreement:
+        label: btndisagreement
+        span: auto
+        type: text
+    btnneutral:
+        label: btnneutral
+        span: auto
+        type: text
+    btntransfer:
+        label: btntransfer
+        span: auto
+        type: text
+    btnmail:
+        label: btnmail
+        span: auto
+        type: text
+    btnprint:
+        label: btnprint
+        span: auto
+        type: text
+    selectitem:
+        label: selectitem
+        span: auto
+        type: text
+    leavesitewarning:
+        label: leavesitewarning
+        span: auto
+        type: text
+    backbutton:
+        label: backbutton
+        span: auto
+        type: text
+    fillinrequiredfields:
+        label: fillinrequiredfields
+        span: auto
+        type: text
+    errorhead:
+        label: errorhead
+        span: auto
+        type: text
+    errorwindowtoosmall:
+        label: errorwindowtoosmall
+        span: auto
+        type: text
+    welcomehead:
+        label: welcomehead
+        span: auto
+        type: text
+    welcometext:
+        label: welcometext
+        span: auto
+        type: text
+    loginhead:
+        label: loginhead
+        span: auto
+        type: text
+    logintext:
+        label: logintext
+        span: auto
+        type: text
+    loginformheader:
+        label: loginformheader
+        span: auto
+        type: text
+    loginnoinput:
+        label: loginnoinput
+        span: auto
+        type: text
+    logininvalidinput:
+        label: logininvalidinput
+        span: auto
+        type: text
+    loginnoconnection:
+        label: loginnoconnection
+        span: auto
+        type: text
+    introhead:
+        label: introhead
+        span: auto
+        type: text
+    introtext:
+        label: introtext
+        span: auto
+        type: text
+    step1head:
+        label: step1head
+        span: auto
+        type: text
+    step1text:
+        label: step1text
+        span: auto
+        type: text
+    step2head:
+        label: step2head
+        span: auto
+        type: text
+    step3head:
+        label: step3head
+        span: auto
+        type: text
+    step2text:
+        label: step2text
+        span: auto
+        type: text
+    step3text:
+        label: step3text
+        span: auto
+        type: text
+    step4head:
+        label: step4head
+        span: auto
+        type: text
+    step4text:
+        label: step4text
+        span: auto
+        type: text
+    step5head:
+        label: step5head
+        span: auto
+        type: text
+    step5text:
+        label: step5text
+        span: auto
+        type: text
+    transferhead:
+        label: transferhead
+        span: auto
+        type: text
+    transfertext:
+        label: transfertext
+        span: auto
+        type: text
+    transferfailed:
+        label: transferfailed
+        span: auto
+        type: text
+    transferok:
+        label: transferok
+        span: auto
+        type: text
+    mailhead:
+        label: mailhead
+        span: auto
+        type: text
+    mailtext:
+        label: mailtext
+        span: auto
+        type: text
+    mailbody:
+        label: mailbody
+        span: auto
+        type: text
+    printouttext:
+        label: printouttext
+        span: auto
+        type: text
+    btnexit:
+        label: btnexit
+        span: auto
+        type: text

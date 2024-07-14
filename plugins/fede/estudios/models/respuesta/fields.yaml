@@ -1,0 +1,5 @@
+fields:
+    respuestas:
+        label: Respuestas
+        span: auto
+        type: text

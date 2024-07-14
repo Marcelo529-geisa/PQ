@@ -1,0 +1,22 @@
+<form role="form" data-request="EditarEstudio::onSave" data-request-validate data-request-flash >
+    <div class="box-body">
+      <input  class="form-control" name="id" id="id" value="{{record.id}}" type="hidden">
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Título</label>
+        <input  class="form-control" name="titulo" id="titulo" value="{{record.titulo}}">
+      </div>
+       <!-- textarea -->
+      <div class="form-group">
+        <label>Descripción</label>
+        <textarea id = "descripcion" name="descripcion" class="form-control" rows="3" > {{record.descripcion }}</textarea>
+      </div>
+     
+    </div>
+    <!-- /.box-body -->
+
+    <div class="box-footer">
+      <button type="submit" data-attach-loading class="btn btn-primary">Grabar</button>
+    </div>
+  
+  </form>

@@ -1,0 +1,10 @@
+name: Respuestas
+form: $/fede/estudios/models/respuesta/fields.yaml
+modelClass: Fede\Estudios\Models\Respuesta
+defaultRedirect: fede/estudios/respuestas
+create:
+    redirect: 'fede/estudios/respuestas/update/:id'
+    redirectClose: fede/estudios/respuestas
+update:
+    redirect: fede/estudios/respuestas
+    redirectClose: fede/estudios/respuestas

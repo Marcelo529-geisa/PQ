@@ -1,0 +1,14 @@
+fields:
+    distribucion:
+        label: 'Defina la cantidad de filas por cada columna'
+        prompt: 'Add new item'
+        style: default
+        span: auto
+        type: repeater
+        form:
+            fields:
+                elementos:
+                    label: 'Cantidad de filas para esta columna:'
+                    span: auto
+                    type: number
+                    comment: 'Aquí viene una explicación por si algo no se entiende'

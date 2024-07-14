@@ -1,0 +1,15 @@
+1719793025a:1:{s:15:"user-update.htm";a:8:{s:8:"fileName";s:15:"user-update.htm";s:7:"content";s:286:"[UpdateUsuario]
+
+[session]
+security = "user"
+allowedUserGroups[] = "superadmin"
+allowedUserGroups[] = "editores"
+allowedUserGroups[] = "colaboradores"
+allowedUserGroups[] = "registered"
+
+[account]
+paramCode = "code"
+forceSecure = 0
+requirePassword = 0
+==
+{% component 'UpdateUsuario' %}";s:5:"mtime";i:1632348559;s:6:"markup";s:31:"{% component 'UpdateUsuario' %}";s:4:"code";N;s:13:"UpdateUsuario";a:0:{}s:7:"session";a:2:{s:8:"security";s:4:"user";s:17:"allowedUserGroups";a:4:{i:0;s:10:"superadmin";i:1;s:8:"editores";i:2;s:13:"colaboradores";i:3;s:10:"registered";}}s:7:"account";a:3:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";s:15:"requirePassword";s:1:"0";}}}

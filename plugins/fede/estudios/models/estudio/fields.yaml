@@ -1,0 +1,26 @@
+fields:
+    titulo:
+        label: Título
+        span: auto
+        type: text
+    descripcion:
+        label: Descripcion
+        size: small
+        span: auto
+        type: textarea
+    user_id:
+        label: Responsable
+        span: auto
+        type: number
+    distribucion:
+        label: 'Elementos por Columna'
+        prompt: 'Add new item'
+        style: default
+        span: auto
+        type: repeater
+        form:
+            fields:
+                elementos:
+                    label: Number
+                    span: auto
+                    type: number

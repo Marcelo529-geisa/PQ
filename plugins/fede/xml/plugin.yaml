@@ -1,0 +1,6 @@
+plugin:
+    name: 'fede.xml::lang.plugin.name'
+    description: 'fede.xml::lang.plugin.description'
+    author: Fede
+    icon: oc-icon-adjust
+    homepage: ''

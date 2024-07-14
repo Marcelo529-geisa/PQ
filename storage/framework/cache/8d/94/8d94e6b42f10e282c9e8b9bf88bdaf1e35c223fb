@@ -1,0 +1,65 @@
+1720984394a:1:{s:12:"contacto.htm";a:9:{s:8:"fileName";s:12:"contacto.htm";s:7:"content";s:527:"title = "Contacto"
+url = "/contacto"
+is_hidden = 0
+
+[contactform]
+==
+<!DOCTYPE html>
+<html lang="en">
+
+{% partial "cabeza" %}
+<body>
+
+ <!-- Add your content of header -->
+ {% partial "cabezera" %}
+
+<div class="section-container">
+  <!-- Add your site or app content here -->
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-xs-12 col-md-12">
+       
+
+        
+        {% component 'contactform' %}
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+{% partial "pie" %}
+</html>";s:5:"mtime";i:1632348559;s:6:"markup";s:458:"<!DOCTYPE html>
+<html lang="en">
+
+{% partial "cabeza" %}
+<body>
+
+ <!-- Add your content of header -->
+ {% partial "cabezera" %}
+
+<div class="section-container">
+  <!-- Add your site or app content here -->
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-xs-12 col-md-12">
+       
+
+        
+        {% component 'contactform' %}
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+{% partial "pie" %}
+</html>";s:4:"code";N;s:5:"title";s:8:"Contacto";s:3:"url";s:9:"/contacto";s:9:"is_hidden";s:1:"0";s:11:"contactform";a:0:{}}}

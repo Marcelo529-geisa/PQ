@@ -1,0 +1,4 @@
+title: Lenguaje
+modelClass: Fede\Portada\Models\Lenguages
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,26 @@
+title = "Lista de usuarios"
+url = "/lista-user"
+layout = "fixed"
+is_hidden = 0
+
+
+[viewBag]
+activeMenu = "usuarios-todos"
+==
+<?php
+use October\Rain\Auth\Models\User;
+
+function onInit() {
+    $this['activatedUsers'] = User::get();
+}
+?>
+==
+<p> Total users: {{ activatedUsers.count() }} </p>
+
+<p> Users: </p>
+
+<ul>
+    {% for user in activatedUsers %}
+        <li>{{ user.name }} {{ user.surname }}</li>
+    {% endfor %}
+</ul>

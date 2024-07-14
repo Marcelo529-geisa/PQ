@@ -1,0 +1,193 @@
+1720984394a:1:{s:18:"lista-editores.htm";a:10:{s:8:"fileName";s:18:"lista-editores.htm";s:7:"content";s:2270:"title = "Lista de Editores"
+url = "/lista-editores"
+layout = "fixed"
+is_hidden = 0
+
+[viewBag]
+activeMenu = "lista-editores"
+==
+<?php
+use RainLab\User\Models\UserGroup as UserGroup;
+use RainLab\User\Models\User as User;
+function onInit() {
+    $this['editores'] = UserGroup::find(4)->users()->get();
+}
+
+function onTest()
+{
+  
+    Session::put('user-id',Input::get('user-id') );
+    return Redirect::to('/actualizar-user/'.Input::get('user-id'));
+}
+function onDelete()
+{
+
+  $usuario=  User::find(Input::get('user-id'));
+  
+  $tag="#usuario-".$usuario->id;
+  $usuario->groups()->detach(4);
+  return [ $tag => ""];
+}
+?>
+==
+
+
+<div class="row">
+  <div class="box box-primary">
+    <div class="box-header with-border">
+      <h3 class="box-title">
+        Lista de editores
+      </h3>
+    </div>
+    <!-- /.box-header -->
+  </div>
+</div>
+<button class="btn btn-primary" onclick="javascript:location.href='{{ url ('crear-editor/')}}'">Agregar</button>
+<hr>
+
+<div class="row">
+  <!-- Left col -->
+  <section class="col-lg-12">
+    <div class="box-body">
+      <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+
+      <table id="example2" class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>mail</th>
+            <th>foto</th>
+            <th>Estudios</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+
+          {% for user in editores %}
+
+          <tr id="usuario-{{user.id}}">
+            <td>
+              <a href="" name="user-id" data-request="onTest"
+                data-request-data="user-id: {{user.id}}">{{ user.name }}</a></td>
+            <td>
+              {{ user.email }}
+            </td>
+            <td>
+              <img src="{{ user.avatar.path }}" style="width: 200px; height: auto;" alt="">
+
+            </td>
+            <td>
+              <button class="btn btn-warning"><a href="" data-request="onDelete"
+                  data-request-confirm="Esta seguro de borrar?"
+                  data-request-data="user-id: {{user.id}}">Borrar</a></button>
+            </td>
+
+          </tr>
+
+          {% else %}
+          {{ noRecordsMessage }}
+
+          {% endfor %}
+
+
+        </tbody>
+
+      </table>
+
+
+
+    </div>
+    <!-- /.box-body -->
+
+</div>
+<!-- /.box -->";s:5:"mtime";i:1632348559;s:6:"markup";s:1649:"<div class="row">
+  <div class="box box-primary">
+    <div class="box-header with-border">
+      <h3 class="box-title">
+        Lista de editores
+      </h3>
+    </div>
+    <!-- /.box-header -->
+  </div>
+</div>
+<button class="btn btn-primary" onclick="javascript:location.href='{{ url ('crear-editor/')}}'">Agregar</button>
+<hr>
+
+<div class="row">
+  <!-- Left col -->
+  <section class="col-lg-12">
+    <div class="box-body">
+      <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+
+      <table id="example2" class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>mail</th>
+            <th>foto</th>
+            <th>Estudios</th>
+          </tr>
+        </thead>
+        <tbody>
+
+
+
+          {% for user in editores %}
+
+          <tr id="usuario-{{user.id}}">
+            <td>
+              <a href="" name="user-id" data-request="onTest"
+                data-request-data="user-id: {{user.id}}">{{ user.name }}</a></td>
+            <td>
+              {{ user.email }}
+            </td>
+            <td>
+              <img src="{{ user.avatar.path }}" style="width: 200px; height: auto;" alt="">
+
+            </td>
+            <td>
+              <button class="btn btn-warning"><a href="" data-request="onDelete"
+                  data-request-confirm="Esta seguro de borrar?"
+                  data-request-data="user-id: {{user.id}}">Borrar</a></button>
+            </td>
+
+          </tr>
+
+          {% else %}
+          {{ noRecordsMessage }}
+
+          {% endfor %}
+
+
+        </tbody>
+
+      </table>
+
+
+
+    </div>
+    <!-- /.box-body -->
+
+</div>
+<!-- /.box -->";s:4:"code";s:479:"use RainLab\User\Models\UserGroup as UserGroup;
+use RainLab\User\Models\User as User;
+function onInit() {
+    $this['editores'] = UserGroup::find(4)->users()->get();
+}
+
+function onTest()
+{
+  
+    Session::put('user-id',Input::get('user-id') );
+    return Redirect::to('/actualizar-user/'.Input::get('user-id'));
+}
+function onDelete()
+{
+
+  $usuario=  User::find(Input::get('user-id'));
+  
+  $tag="#usuario-".$usuario->id;
+  $usuario->groups()->detach(4);
+  return [ $tag => ""];
+}";s:5:"title";s:17:"Lista de Editores";s:3:"url";s:15:"/lista-editores";s:6:"layout";s:5:"fixed";s:9:"is_hidden";s:1:"0";s:7:"viewBag";a:1:{s:10:"activeMenu";s:14:"lista-editores";}}}

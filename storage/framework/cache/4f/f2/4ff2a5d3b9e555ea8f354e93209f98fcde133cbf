@@ -1,0 +1,125 @@
+1720984394a:1:{s:15:"lista-fotos.htm";a:11:{s:8:"fileName";s:15:"lista-fotos.htm";s:7:"content";s:2081:"title = "Lista fotos"
+url = "/lista-fotos"
+layout = "fixed"
+is_hidden = 0
+
+[builderList]
+modelClass = "Fede\Portada\Models\Portada"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "titulo"
+noRecordsMessage = "No records found"
+detailsPage = "actualizar-foto"
+detailsKeyColumn = "id"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+
+
+[viewBag]
+activeMenu = "editar-portada"
+==
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+        <!-- /.box-header -->
+            <div class="box-body">
+            <a href="fotos-portada"><button type="submit" class="btn btn-info">Agregar Foto</button></a>
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Imagen</th>
+                </tr>
+                </thead>
+                <tbody>
+
+
+
+
+    {% for record in records %}
+      <tr>
+                  <td>  {% spaceless %}
+                   {% if detailsPage %}
+                    <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+                {% endif %}
+               
+                
+                {{ record.titulo }}
+ {% if detailsPage %}
+                    </a>
+                {% endif %}
+               
+            {% endspaceless %}</td>
+                  <td>
+                  <img src="{{ record.fileupload1.path }}" style="width: 200px; height: auto;" alt="">
+
+                  
+                  </td>
+                  
+                  
+                </tr>
+       
+                {% else %}
+        {{ noRecordsMessage }}
+    {% endfor %}
+
+              
+                </tbody>
+                
+              </table>";s:5:"mtime";i:1632348559;s:6:"markup";s:1671:"{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+        <!-- /.box-header -->
+            <div class="box-body">
+            <a href="fotos-portada"><button type="submit" class="btn btn-info">Agregar Foto</button></a>
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Imagen</th>
+                </tr>
+                </thead>
+                <tbody>
+
+
+
+
+    {% for record in records %}
+      <tr>
+                  <td>  {% spaceless %}
+                   {% if detailsPage %}
+                    <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+                {% endif %}
+               
+                
+                {{ record.titulo }}
+ {% if detailsPage %}
+                    </a>
+                {% endif %}
+               
+            {% endspaceless %}</td>
+                  <td>
+                  <img src="{{ record.fileupload1.path }}" style="width: 200px; height: auto;" alt="">
+
+                  
+                  </td>
+                  
+                  
+                </tr>
+       
+                {% else %}
+        {{ noRecordsMessage }}
+    {% endfor %}
+
+              
+                </tbody>
+                
+              </table>";s:4:"code";N;s:5:"title";s:11:"Lista fotos";s:3:"url";s:12:"/lista-fotos";s:6:"layout";s:5:"fixed";s:9:"is_hidden";s:1:"0";s:11:"builderList";a:9:{s:10:"modelClass";s:27:"Fede\Portada\Models\Portada";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:6:"titulo";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:15:"actualizar-foto";s:16:"detailsKeyColumn";s:2:"id";s:19:"detailsUrlParameter";s:2:"id";s:10:"pageNumber";s:11:"{{ :page }}";}s:7:"viewBag";a:1:{s:10:"activeMenu";s:14:"editar-portada";}}}

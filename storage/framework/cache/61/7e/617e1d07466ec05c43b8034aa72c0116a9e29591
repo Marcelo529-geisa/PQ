@@ -1,0 +1,16 @@
+1720984394a:1:{s:10:"correo.htm";a:12:{s:8:"fileName";s:10:"correo.htm";s:7:"content";s:320:"title = "correo"
+url = "/correo/:id"
+layout = "fixed"
+is_hidden = 0
+
+[EnviarMail]
+[viewBag]
+activeMenu = "correo"
+[builderDetails]
+modelClass = "Fede\Estudios\Models\Estudio"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "titulo"
+notFoundMessage = "Record not found"
+==
+{% component 'EnviarMail' %}";s:5:"mtime";i:1632348559;s:6:"markup";s:28:"{% component 'EnviarMail' %}";s:4:"code";N;s:5:"title";s:6:"correo";s:3:"url";s:11:"/correo/:id";s:6:"layout";s:5:"fixed";s:9:"is_hidden";s:1:"0";s:10:"EnviarMail";a:0:{}s:7:"viewBag";a:1:{s:10:"activeMenu";s:6:"correo";}s:14:"builderDetails";a:5:{s:10:"modelClass";s:28:"Fede\Estudios\Models\Estudio";s:15:"identifierValue";s:9:"{{ :id }}";s:14:"modelKeyColumn";s:2:"id";s:13:"displayColumn";s:6:"titulo";s:15:"notFoundMessage";s:16:"Record not found";}}}

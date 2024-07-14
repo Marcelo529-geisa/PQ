@@ -1,0 +1,26 @@
+1720984394a:1:{s:13:"responder.htm";a:8:{s:8:"fileName";s:13:"responder.htm";s:7:"content";s:613:"title = "responder"
+url = "/responder"
+is_hidden = 0
+==
+use October\Rain\Parse\Syntax\Parser as SyntaxParser;
+function onInit() {
+    $myfile = fopen("/var/www/html/PQ/themes/baba-adminlte/assets/assets4/src/htmlqB.js", "r") or die("Unable to open file!");
+    $contenido= fread($myfile,filesize("/var/www/html/PQ/themes/baba-adminlte/assets/assets4/src/htmlqB.js"));
+
+    fclose($myfile);
+
+    //$contenido='<h1>{text name="websiteName" label="Website Name"}Our wonderful website{/text}</h1>';
+$syntax = SyntaxParser::parse($contenido);
+echo $syntax->render(['websiteName' => 'October CMS']);
+}
+==";s:5:"mtime";i:1636384684;s:6:"markup";s:0:"";s:4:"code";s:549:"use October\Rain\Parse\Syntax\Parser as SyntaxParser;
+function onInit() {
+    $myfile = fopen("/var/www/html/PQ/themes/baba-adminlte/assets/assets4/src/htmlqB.js", "r") or die("Unable to open file!");
+    $contenido= fread($myfile,filesize("/var/www/html/PQ/themes/baba-adminlte/assets/assets4/src/htmlqB.js"));
+
+    fclose($myfile);
+
+    //$contenido='<h1>{text name="websiteName" label="Website Name"}Our wonderful website{/text}</h1>';
+$syntax = SyntaxParser::parse($contenido);
+echo $syntax->render(['websiteName' => 'October CMS']);
+}";s:5:"title";s:9:"responder";s:3:"url";s:10:"/responder";s:9:"is_hidden";s:1:"0";}}

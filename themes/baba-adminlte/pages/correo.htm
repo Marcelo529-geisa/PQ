@@ -1,0 +1,16 @@
+title = "correo"
+url = "/correo/:id"
+layout = "fixed"
+is_hidden = 0
+
+[EnviarMail]
+[viewBag]
+activeMenu = "correo"
+[builderDetails]
+modelClass = "Fede\Estudios\Models\Estudio"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "titulo"
+notFoundMessage = "Record not found"
+==
+{% component 'EnviarMail' %}

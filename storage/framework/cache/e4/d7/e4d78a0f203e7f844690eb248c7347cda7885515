@@ -1,0 +1,229 @@
+1720984394a:1:{s:11:"metodoq.htm";a:8:{s:8:"fileName";s:11:"metodoq.htm";s:7:"content";s:4419:"title = "MetodoQ"
+url = "/metodoq"
+is_hidden = 0
+==
+<!DOCTYPE html>
+<html lang="en">
+    {% partial "cabeza" %}
+
+<body>
+
+ <!-- Add your content of header -->
+ {% partial "cabezera" %}
+
+  
+<div class="hero-full-container background-image-container white-text-container" style="background-image:url('http://plataformaq.unsa.edu.ar/storage/app/uploads/public/624/205/415/62420541561cb012504776.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="hero-full-wrapper">
+          <div class="text-content  text-center">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="text-center section-container-spacer">
+          <h2 class="with-project-number"><span class="project-number">01</span>Quienes somos?</h2>
+        </div>
+        <div class="row section-container-spacer">
+          <div class="col-md-4">
+              <div class="section-container-spacer">
+                <h3>Creadores</h3>
+                <p>Martín Alejandro Iribarnegaray</p>
+                  <p>Fede Albesa</p>
+              </div>
+
+              <h4></h4>
+              
+              <ul class="list-unstyled">
+                <li></li> 
+                <li></li>
+                <li></li>
+              </ul>
+              
+
+              <p></p>
+              <p></p>
+          </div>
+          <div class="col-md-8">
+            <h3>Una Platforma de estudios Q para la comunidad científica</h3>
+            <p>Esta Plataforma Q tiene el objetivo de brindar una herramienta online y abierta para la realización de estudios Q en forma completa, incluyendo la redacción y selección de las frases (statements), la invitación de los participantes, y el registro de las distribuciones (sorts). Los archivos entregados por esta Plataforma estarán en formato JSON o DAT (para el registro de las respuestas) y en formato STA para las frases, los cuales luego pueden ser procesados en el programa especializado PQmethod.</p>
+              <p>Esta herramienta web es el resultado de una colaboración entre el Instituto Nacional de Tecnología Agropecuaria (INTA) y el Instituto de Investigaciones en Energía No Convencional (INENCO) en el contexto del proyecto financiado por la Unión Europea EUROCLIMA+, titulado "Manejo y restauración de Bosques en entornos productivos"</p>
+          </div>
+        </div>
+
+
+        <img src='http://plataformaq.unsa.edu.ar/storage/app/media/winter-3974511.jpg' alt="" class="img-responsive">
+        <p></p>
+
+        <blockquote class="text-center large-spacing">
+            <p>“Es la mente la que crea el mundo que nos rodea y aún cuando nos encontramos juntos,
+parados en la misma pradera, mis ojos nunca verán lo que los tuyos contemplan y mi
+corazón nunca se agitará con las emociones que conmueven al tuyo”</p>
+            <small class="pull-right">George Gissing</small>
+        </blockquote>
+        
+        <div class="row">
+            <div class="col-md-6">
+            <img src="{{'assets/assets5/assets/images/img-02.jpg'|theme}}" class="img-responsive" alt="">
+            <p></p>
+            </div>
+            <div class="col-md-6">
+            <img src="{{'assets/assets5/assets/images/img-01.jpg'|theme}}" class="img-responsive" alt="">
+            <p></p>
+            </div>
+        </div>
+
+        <img src="{{'assets/assets5/assets/images/img-04.jpg'|theme}}" class="img-responsive" alt="">
+        <p></p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <ul class="navbar-nav nav">
+          <li>
+            <a href="" title="" class="project-nav left"><span class="project-number">01</span>Previous</a>
+          </li>
+        </ul>
+        <p class="h5 navbar-text"><i class="fa fa-chevron-down arrow-down" aria-hidden="true"></i></p>
+
+        <ul class="navbar-nav nav navbar-right">
+          <li>
+            <a href="" title="" class="project-nav right"><span class="project-number">03</span>Next </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% partial "pie" %}
+
+</html>";s:5:"mtime";i:1648595751;s:6:"markup";s:4367:"<!DOCTYPE html>
+<html lang="en">
+    {% partial "cabeza" %}
+
+<body>
+
+ <!-- Add your content of header -->
+ {% partial "cabezera" %}
+
+  
+<div class="hero-full-container background-image-container white-text-container" style="background-image:url('http://plataformaq.unsa.edu.ar/storage/app/uploads/public/624/205/415/62420541561cb012504776.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="hero-full-wrapper">
+          <div class="text-content  text-center">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="text-center section-container-spacer">
+          <h2 class="with-project-number"><span class="project-number">01</span>Quienes somos?</h2>
+        </div>
+        <div class="row section-container-spacer">
+          <div class="col-md-4">
+              <div class="section-container-spacer">
+                <h3>Creadores</h3>
+                <p>Martín Alejandro Iribarnegaray</p>
+                  <p>Fede Albesa</p>
+              </div>
+
+              <h4></h4>
+              
+              <ul class="list-unstyled">
+                <li></li> 
+                <li></li>
+                <li></li>
+              </ul>
+              
+
+              <p></p>
+              <p></p>
+          </div>
+          <div class="col-md-8">
+            <h3>Una Platforma de estudios Q para la comunidad científica</h3>
+            <p>Esta Plataforma Q tiene el objetivo de brindar una herramienta online y abierta para la realización de estudios Q en forma completa, incluyendo la redacción y selección de las frases (statements), la invitación de los participantes, y el registro de las distribuciones (sorts). Los archivos entregados por esta Plataforma estarán en formato JSON o DAT (para el registro de las respuestas) y en formato STA para las frases, los cuales luego pueden ser procesados en el programa especializado PQmethod.</p>
+              <p>Esta herramienta web es el resultado de una colaboración entre el Instituto Nacional de Tecnología Agropecuaria (INTA) y el Instituto de Investigaciones en Energía No Convencional (INENCO) en el contexto del proyecto financiado por la Unión Europea EUROCLIMA+, titulado "Manejo y restauración de Bosques en entornos productivos"</p>
+          </div>
+        </div>
+
+
+        <img src='http://plataformaq.unsa.edu.ar/storage/app/media/winter-3974511.jpg' alt="" class="img-responsive">
+        <p></p>
+
+        <blockquote class="text-center large-spacing">
+            <p>“Es la mente la que crea el mundo que nos rodea y aún cuando nos encontramos juntos,
+parados en la misma pradera, mis ojos nunca verán lo que los tuyos contemplan y mi
+corazón nunca se agitará con las emociones que conmueven al tuyo”</p>
+            <small class="pull-right">George Gissing</small>
+        </blockquote>
+        
+        <div class="row">
+            <div class="col-md-6">
+            <img src="{{'assets/assets5/assets/images/img-02.jpg'|theme}}" class="img-responsive" alt="">
+            <p></p>
+            </div>
+            <div class="col-md-6">
+            <img src="{{'assets/assets5/assets/images/img-01.jpg'|theme}}" class="img-responsive" alt="">
+            <p></p>
+            </div>
+        </div>
+
+        <img src="{{'assets/assets5/assets/images/img-04.jpg'|theme}}" class="img-responsive" alt="">
+        <p></p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <ul class="navbar-nav nav">
+          <li>
+            <a href="" title="" class="project-nav left"><span class="project-number">01</span>Previous</a>
+          </li>
+        </ul>
+        <p class="h5 navbar-text"><i class="fa fa-chevron-down arrow-down" aria-hidden="true"></i></p>
+
+        <ul class="navbar-nav nav navbar-right">
+          <li>
+            <a href="" title="" class="project-nav right"><span class="project-number">03</span>Next </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% partial "pie" %}
+
+</html>";s:4:"code";N;s:5:"title";s:7:"MetodoQ";s:3:"url";s:8:"/metodoq";s:9:"is_hidden";s:1:"0";}}

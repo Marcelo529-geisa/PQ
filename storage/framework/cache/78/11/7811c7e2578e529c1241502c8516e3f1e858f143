@@ -1,0 +1,45 @@
+1720984394a:1:{s:11:"lenguas.htm";a:8:{s:8:"fileName";s:11:"lenguas.htm";s:7:"content";s:830:"title = "lenguas"
+url = "/lenguas/:id"
+is_hidden = 0
+==
+<?php
+use October\Rain\Parse\Syntax\Parser as SyntaxParser;
+use Fede\Portada\Models\Lenguages as Lenguages;
+
+
+function onInit() {
+    $lenguaje=Lenguages::find(1)->get()->first()->toArray();
+   
+    $myfile = fopen("/var/www/html/PQ2/themes/baba-adminlte/assets/assets4/settings/lang.xml", "r") or die("Unable to open file!");
+    $contenido= fread($myfile,filesize("/var/www/html/PQ2/themes/baba-adminlte/assets/assets4/settings/lang.xml"));
+
+    fclose($myfile);
+
+    //$contenido='<h1>{text name="websiteName" label="Website Name"}Our wonderful website{/text}</h1>';
+$syntax = SyntaxParser::parse($contenido);
+$xml_f=$syntax->render($lenguaje);
+//echo $xml_f;die('dai');
+return Response::make($xml_f)->header('Content-Type', 'text/xml');
+
+}
+?>
+==";s:5:"mtime";i:1632348559;s:6:"markup";s:0:"";s:4:"code";s:758:"
+use October\Rain\Parse\Syntax\Parser as SyntaxParser;
+use Fede\Portada\Models\Lenguages as Lenguages;
+
+
+function onInit() {
+    $lenguaje=Lenguages::find(1)->get()->first()->toArray();
+   
+    $myfile = fopen("/var/www/html/PQ2/themes/baba-adminlte/assets/assets4/settings/lang.xml", "r") or die("Unable to open file!");
+    $contenido= fread($myfile,filesize("/var/www/html/PQ2/themes/baba-adminlte/assets/assets4/settings/lang.xml"));
+
+    fclose($myfile);
+
+    //$contenido='<h1>{text name="websiteName" label="Website Name"}Our wonderful website{/text}</h1>';
+$syntax = SyntaxParser::parse($contenido);
+$xml_f=$syntax->render($lenguaje);
+//echo $xml_f;die('dai');
+return Response::make($xml_f)->header('Content-Type', 'text/xml');
+
+}";s:5:"title";s:7:"lenguas";s:3:"url";s:12:"/lenguas/:id";s:9:"is_hidden";s:1:"0";}}

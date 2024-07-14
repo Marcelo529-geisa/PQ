@@ -1,0 +1,23 @@
+
+<form role="form" data-request="onUpdate" data-request-validate data-request-flash >
+    <div class="box-body">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Título</label>
+        <input  class="form-control" name="titulo" id="titulo" value="{{estudio.titulo}}">
+      </div>
+       <!-- textarea -->
+      <div class="form-group">
+        <label>Descripción</label>
+        <textarea id = "descripcion" name="descripcion" class="form-control" rows="3" >{{estudio.descripcion}}</textarea>
+      </div>
+     
+    </div>
+    <!-- /.box-body -->
+
+    <div class="box-footer">
+      <button type="submit" data-attach-loading class="btn btn-primary">Grabar</button>
+    </div>
+    {% flash success %}
+     <p>{{message}}</p>
+    {% endflash %}
+  </form>

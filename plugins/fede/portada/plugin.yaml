@@ -1,0 +1,19 @@
+plugin:
+    name: 'fede.portada::lang.plugin.name'
+    description: 'fede.portada::lang.plugin.description'
+    author: Fede
+    icon: oc-icon-home
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'Fotos Portada'
+        url: fede/portada/fotosportada
+        icon: icon-camera
+    main-menu-item2:
+        label: 'Lenguaje htmlq'
+        url: fede/portada/lenguaje
+        icon: icon-life-ring
+    main-menu-item3:
+        label: Mail
+        url: /system/settings/update/october/system/mail_settings
+        icon: icon-envelope

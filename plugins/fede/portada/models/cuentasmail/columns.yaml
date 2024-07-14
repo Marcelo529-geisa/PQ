@@ -1,0 +1,13 @@
+columns:
+    mail:
+        label: mail
+        type: text
+    contra:
+        label: contra
+        type: text
+    protocolo:
+        label: protocolo
+        type: text
+    puerto:
+        label: puerto
+        type: number

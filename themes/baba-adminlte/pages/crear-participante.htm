@@ -1,0 +1,24 @@
+title = "Crear participante"
+url = "/crear-participante/:id"
+layout = "fixed"
+is_hidden = 0
+
+
+[builderDetails]
+modelClass = "Fede\Estudios\Models\Estudio"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "titulo"
+notFoundMessage = "Record not found"
+
+
+[viewBag]
+activeMenu = "correo" 
+
+[CrearParticipante]
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% component 'CrearParticipante' %}

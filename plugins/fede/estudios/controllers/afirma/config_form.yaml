@@ -1,0 +1,10 @@
+name: Afirma
+form: $/fede/estudios/models/afirma/fields.yaml
+modelClass: Fede\Estudios\Models\Afirma
+defaultRedirect: fede/estudios/afirma
+create:
+    redirect: 'fede/estudios/afirma/update/:id'
+    redirectClose: fede/estudios/afirma
+update:
+    redirect: fede/estudios/afirma
+    redirectClose: fede/estudios/afirma

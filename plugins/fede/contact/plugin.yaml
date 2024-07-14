@@ -1,0 +1,6 @@
+plugin:
+    name: 'fede.contact::lang.plugin.name'
+    description: 'fede.contact::lang.plugin.description'
+    author: Fede
+    icon: oc-icon-envelope
+    homepage: ''

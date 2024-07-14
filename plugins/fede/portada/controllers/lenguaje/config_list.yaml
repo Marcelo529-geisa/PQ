@@ -1,0 +1,12 @@
+list: $/fede/portada/models/lenguages/columns.yaml
+modelClass: Fede\Portada\Models\Lenguages
+title: Lenguaje
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'fede/portada/lenguaje/update/:id'

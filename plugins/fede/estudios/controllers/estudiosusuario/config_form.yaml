@@ -1,0 +1,10 @@
+name: EstudiosUsuario
+form: $/fede/estudios/models/estudio/fields.yaml
+modelClass: Fede\Estudios\Models\Estudio
+defaultRedirect: fede/estudios/estudiosusuario
+create:
+    redirect: 'fede/estudios/estudiosusuario/update/:id'
+    redirectClose: fede/estudios/estudiosusuario
+update:
+    redirect: fede/estudios/estudiosusuario
+    redirectClose: fede/estudios/estudiosusuario

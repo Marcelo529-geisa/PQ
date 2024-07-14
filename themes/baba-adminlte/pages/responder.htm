@@ -1,0 +1,16 @@
+title = "responder"
+url = "/responder"
+is_hidden = 0
+==
+use October\Rain\Parse\Syntax\Parser as SyntaxParser;
+function onInit() {
+    $myfile = fopen("/var/www/html/PQ/themes/baba-adminlte/assets/assets4/src/htmlqB.js", "r") or die("Unable to open file!");
+    $contenido= fread($myfile,filesize("/var/www/html/PQ/themes/baba-adminlte/assets/assets4/src/htmlqB.js"));
+
+    fclose($myfile);
+
+    //$contenido='<h1>{text name="websiteName" label="Website Name"}Our wonderful website{/text}</h1>';
+$syntax = SyntaxParser::parse($contenido);
+echo $syntax->render(['websiteName' => 'October CMS']);
+}
+==

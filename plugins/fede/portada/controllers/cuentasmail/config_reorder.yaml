@@ -1,0 +1,4 @@
+title: CuentasMail
+modelClass: Fede\Portada\Models\CuentasMail
+toolbar:
+    buttons: reorder_toolbar

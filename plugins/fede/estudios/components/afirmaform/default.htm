@@ -1,0 +1,14 @@
+<div>
+    <form role="form"
+    data-request="onSave"
+    data-request-success="$el.hide();$('.confirm-container').removeClass('hide');">
+    
+
+
+    {{ widget.render()|raw }}
+ 
+<div class="form-group">
+    <button class="btn btn-primary btn-block btn-lg" type="submit" value="register">Crear</button>
+</div>
+{{ form_close() }}
+</div>

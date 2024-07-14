@@ -1,0 +1,4 @@
+title: Info
+modelClass: Fede\Estudios\Models\Info
+toolbar:
+    buttons: reorder_toolbar

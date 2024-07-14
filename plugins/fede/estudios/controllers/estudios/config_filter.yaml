@@ -1,0 +1,11 @@
+scopes:
+
+  del_usuario: 
+
+    label: del_usuario
+
+    modelClass: Fede\Estudios\Models\Estudio
+    
+    scope: Usuario
+
+    conditions: user_id = 1

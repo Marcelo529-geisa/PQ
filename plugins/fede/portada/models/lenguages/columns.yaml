@@ -1,0 +1,136 @@
+columns:
+    id:
+        label: id
+        type: number
+    btncontinue:
+        label: btncontinue
+        type: text
+    btnclose:
+        label: btnclose
+        type: text
+    btnhelp:
+        label: btnhelp
+        type: text
+    btnagreement:
+        label: btnagreement
+        type: text
+    btnneutral:
+        label: btnneutral
+        type: text
+    btndisagreement:
+        label: btndisagreement
+        type: text
+    btntransfer:
+        label: btntransfer
+        type: text
+    btnmail:
+        label: btnmail
+        type: text
+    btnprint:
+        label: btnprint
+        type: text
+    btnexit:
+        label: btnexit
+        type: text
+    selectitem:
+        label: selectitem
+        type: text
+    leavesitewarning:
+        label: leavesitewarning
+        type: text
+    backbutton:
+        label: backbutton
+        type: text
+    fillinrequiredfields:
+        label: fillinrequiredfields
+        type: text
+    errorhead:
+        label: errorhead
+        type: text
+    errorwindowtoosmall:
+        label: errorwindowtoosmall
+        type: text
+    welcomehead:
+        label: welcomehead
+        type: text
+    welcometext:
+        label: welcometext
+        type: text
+    loginhead:
+        label: loginhead
+        type: text
+    logintext:
+        label: logintext
+        type: text
+    loginformheader:
+        label: loginformheader
+        type: text
+    loginnoinput:
+        label: loginnoinput
+        type: text
+    logininvalidinput:
+        label: logininvalidinput
+        type: text
+    loginnoconnection:
+        label: loginnoconnection
+        type: text
+    introhead:
+        label: introhead
+        type: text
+    introtext:
+        label: introtext
+        type: text
+    step1head:
+        label: step1head
+        type: text
+    step1text:
+        label: step1text
+        type: text
+    step2head:
+        label: step2head
+        type: text
+    step2text:
+        label: step2text
+        type: text
+    step3head:
+        label: step3head
+        type: text
+    step3text:
+        label: step3text
+        type: text
+    step4head:
+        label: step4head
+        type: text
+    step4text:
+        label: step4text
+        type: text
+    step5head:
+        label: step5head
+        type: text
+    step5text:
+        label: step5text
+        type: text
+    transferhead:
+        label: transferhead
+        type: text
+    transfertext:
+        label: transfertext
+        type: text
+    transferfailed:
+        label: transferfailed
+        type: text
+    transferok:
+        label: transferok
+        type: text
+    mailhead:
+        label: mailhead
+        type: text
+    mailtext:
+        label: mailtext
+        type: text
+    mailbody:
+        label: mailbody
+        type: text
+    printouttext:
+        label: printouttext
+        type: text

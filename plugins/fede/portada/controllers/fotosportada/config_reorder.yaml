@@ -1,0 +1,4 @@
+title: Fotosportada
+modelClass: Fede\Portada\Models\Portada
+toolbar:
+    buttons: reorder_toolbar

@@ -1,0 +1,227 @@
+1720984394a:1:{s:16:"afirmaciones.htm";a:11:{s:8:"fileName";s:16:"afirmaciones.htm";s:7:"content";s:3110:"title = "Afirmaciones"
+url = "/afirmaciones/:id"
+layout = "fixed"
+is_hidden = 0
+
+[viewBag]
+activeMenu = "afirmaciones"
+
+[builderDetails]
+modelClass = "Fede\Estudios\Models\Estudio"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "titulo"
+notFoundMessage = "Record not found"
+==
+
+use Fede\Estudios\Models\Afirma as Afirma;
+
+function onDelete()
+{
+
+  $afirmacion=  Afirma::find(Input::get('afirmacion-id'));
+  
+  $tag="#afirmacion-".$afirmacion->id;
+  $afirmacion->delete();
+  return [ $tag => ""];
+}
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+{% set n_elementos=0 %}
+
+
+{% for columna in record.distribucion %}
+  {% set n_elementos = n_elementos + columna.elementos %}
+{% endfor %}
+
+
+<div class="row">
+  <!-- Left col -->
+  <section class="col-lg-12">
+    {% if n_elementos == record.afirma.count  %}
+    
+    <div class="box box-success">
+      <div class="box-header with-border">
+        <h3>Todo bien: El número de afirmaciones es igual al número de casilleros.</h3>
+        <br>
+        <p><strong>cantidad de casilleros: </strong> {{ n_elementos }}</p>
+        <p><strong>cantidad de afirmaciones: </strong>  {{ record.afirma.count }}</p>
+        <br>
+      </div>
+    </div>
+    {% else %}
+    <div class="box box-danger">
+      <div class="box-header with-border">
+        <h3>Error: el número de afirmaciones no coincide con el número de casilleros!</h3>
+        <br>
+        <p><strong>cantidad de casilleros: </strong> {{ n_elementos }}</p>
+        <p><strong>cantidad de afirmaciones: </strong> {{ record.afirma.count }}</p>
+        <br>
+        
+      </div>
+    </div>
+    
+    {% endif %}
+    
+ 
+    
+    <div class="box-body">
+      <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+       <button  class="btn btn-primary" onclick="javascript:location.href='{{ url ('crear-afirmacion')}}/{{record.id}}'">Agregar</button> 
+
+      <table id="example2" class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Nro.</th>
+            <th>Afirmacion</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for key,afirmacion in record.afirma %}
+          <tr id="afirmacion-{{afirmacion.id}}" >
+            <td>
+              {{ key+1}}
+            </td>
+            <td>
+              {% spaceless %}
+             
+              <a href="{{ url ('afirmacion')}}/{{afirmacion.id}}">
+              
+
+
+                {{ afirmacion.texto }}
+              
+              </a>
+             
+
+              {% endspaceless %}
+             
+
+
+            </td>
+            <td>
+              <button class="btn btn-warning"><a href=""data-request="onDelete" data-request-data="afirmacion-id: {{afirmacion.id}}">Borrar</a></button>
+            </td>
+
+
+          </tr>
+
+
+
+         {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+{%endif%}";s:5:"mtime";i:1632348559;s:6:"markup";s:2561:"{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+{% if record %}
+{% set n_elementos=0 %}
+
+
+{% for columna in record.distribucion %}
+  {% set n_elementos = n_elementos + columna.elementos %}
+{% endfor %}
+
+
+<div class="row">
+  <!-- Left col -->
+  <section class="col-lg-12">
+    {% if n_elementos == record.afirma.count  %}
+    
+    <div class="box box-success">
+      <div class="box-header with-border">
+        <h3>Todo bien: El número de afirmaciones es igual al número de casilleros.</h3>
+        <br>
+        <p><strong>cantidad de casilleros: </strong> {{ n_elementos }}</p>
+        <p><strong>cantidad de afirmaciones: </strong>  {{ record.afirma.count }}</p>
+        <br>
+      </div>
+    </div>
+    {% else %}
+    <div class="box box-danger">
+      <div class="box-header with-border">
+        <h3>Error: el número de afirmaciones no coincide con el número de casilleros!</h3>
+        <br>
+        <p><strong>cantidad de casilleros: </strong> {{ n_elementos }}</p>
+        <p><strong>cantidad de afirmaciones: </strong> {{ record.afirma.count }}</p>
+        <br>
+        
+      </div>
+    </div>
+    
+    {% endif %}
+    
+ 
+    
+    <div class="box-body">
+      <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+       <button  class="btn btn-primary" onclick="javascript:location.href='{{ url ('crear-afirmacion')}}/{{record.id}}'">Agregar</button> 
+
+      <table id="example2" class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>Nro.</th>
+            <th>Afirmacion</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for key,afirmacion in record.afirma %}
+          <tr id="afirmacion-{{afirmacion.id}}" >
+            <td>
+              {{ key+1}}
+            </td>
+            <td>
+              {% spaceless %}
+             
+              <a href="{{ url ('afirmacion')}}/{{afirmacion.id}}">
+              
+
+
+                {{ afirmacion.texto }}
+              
+              </a>
+             
+
+              {% endspaceless %}
+             
+
+
+            </td>
+            <td>
+              <button class="btn btn-warning"><a href=""data-request="onDelete" data-request-data="afirmacion-id: {{afirmacion.id}}">Borrar</a></button>
+            </td>
+
+
+          </tr>
+
+
+
+         {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+{%endif%}";s:4:"code";s:228:"use Fede\Estudios\Models\Afirma as Afirma;
+
+function onDelete()
+{
+
+  $afirmacion=  Afirma::find(Input::get('afirmacion-id'));
+  
+  $tag="#afirmacion-".$afirmacion->id;
+  $afirmacion->delete();
+  return [ $tag => ""];
+}";s:5:"title";s:12:"Afirmaciones";s:3:"url";s:17:"/afirmaciones/:id";s:6:"layout";s:5:"fixed";s:9:"is_hidden";s:1:"0";s:7:"viewBag";a:1:{s:10:"activeMenu";s:12:"afirmaciones";}s:14:"builderDetails";a:5:{s:10:"modelClass";s:28:"Fede\Estudios\Models\Estudio";s:15:"identifierValue";s:9:"{{ :id }}";s:14:"modelKeyColumn";s:2:"id";s:13:"displayColumn";s:6:"titulo";s:15:"notFoundMessage";s:16:"Record not found";}}}

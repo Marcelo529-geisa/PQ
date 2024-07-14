@@ -1,0 +1,11 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table fede_portada_'
+    - builder_table_create_fede_portada_.php
+1.0.3:
+    - 'Created table fede_portada_lenguajes'
+    - builder_table_create_fede_portada_lenguajes.php
+1.0.4:
+    - 'Created table fede_portada_mail'
+    - builder_table_create_fede_portada_mail.php

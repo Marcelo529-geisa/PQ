@@ -1,0 +1,4 @@
+title: Distro
+modelClass: Fede\Estudios\Models\Estudio
+toolbar:
+    buttons: reorder_toolbar

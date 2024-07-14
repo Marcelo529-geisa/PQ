@@ -1,0 +1,10 @@
+name: Fotosportada
+form: $/fede/portada/models/portada/fields.yaml
+modelClass: Fede\Portada\Models\Portada
+defaultRedirect: fede/portada/fotosportada
+create:
+    redirect: 'fede/portada/fotosportada/update/:id'
+    redirectClose: fede/portada/fotosportada
+update:
+    redirect: fede/portada/fotosportada
+    redirectClose: fede/portada/fotosportada

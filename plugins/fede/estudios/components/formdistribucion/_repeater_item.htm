@@ -1,0 +1,33 @@
+
+
+<li class="field-repeater-item">
+
+            <div class="repeater-item-handle Repeater-formDistribucion-items-distribucion-handle">
+                <i class="icon-bars"></i>
+            </div>
+    
+            <div class="repeater-item-remove">
+                <button type="button" class="close" aria-label="Remove" data-repeater-remove="" data-request="formDistribucion::onRemoveItem" data-request-data="'_repeater_index': '{{numero}}', '_repeater_group': ''" data-request-confirm="Are you sure?">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+        
+        <div class="repeater-item-collapse">
+            <a href="javascript:;" class="repeater-item-collapse-one">
+                <i class="icon-chevron-up"></i>
+            </a>
+        </div>
+    
+        <div class="repeater-item-collapsed-title"></div>
+    
+        <div class="field-repeater-form" data-control="formwidget" data-refresh-handler="formDistribucion::onRefresh" data-refresh-data="'_repeater_index': '{{numero}}', '_repeater_group': ''" data-disposable="">
+        <div class="form-group  number-field span-left   " data-field-name="elementos" id="Form-formDistribucionForm{{numero}}-field-Estudio-distribucion-{{numero}}-elementos-group">
+                            <label for="Form-formDistribucionForm{{numero}}-field-Estudio-distribucion-{{numero}}-elementos">
+                    Cantidad de filas para esta columna:            </label>
+            
+            
+            <!-- Number -->
+        
+        <input type="number" step="any" name="distribucion[{{numero}}][elementos]" id="Form-formDistribucionForm{{numero}}-field-Estudio-distribucion-2-elementos" value="" placeholder="" class="form-control" autocomplete="off" pattern="-?\d+(\.\d+)?" maxlength="255"></div>                    </div>
+    
+    </li>

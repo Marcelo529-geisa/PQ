@@ -1,0 +1,38 @@
+
+    <!-- jQuery -->
+    <script src="{{'assets2/js/jquery-2.1.0.min.js'|theme}}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{{'assets2/js/popper.js'|theme}}"></script>
+    <script src="{{'assets2/js/bootstrap.min.js'|theme}}"></script>
+
+    <!-- Plugins -->
+    <script src="{{'assets2/js/owl-carousel.js'|theme}}"></script>
+    <script src="{{'assets2/js/scrollreveal.min.js'|theme}}"></script>
+    <script src="{{'assets2/js/waypoints.min.js'|theme}}"></script>
+    <script src="{{'assets2/js/jquery.counterup.min.js'|theme}}"></script>
+    <script src="{{'assets2/js/imgfix.min.js'|theme}}"></script> 
+    <script src="{{'assets2/js/slick.js'|theme}}"></script> 
+    <script src="{{'assets2/js/lightbox.js'|theme}}"></script> 
+    <script src="{{'assets2/js/isotope.js'|theme}}"></script> 
+    
+    <!-- Global Init -->
+    <script src="{{'assets2/js/custom.js'|theme}}"></script>
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+
+    </script>

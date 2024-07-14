@@ -1,0 +1,32 @@
+plugin:
+    name: 'fede.estudios::lang.plugin.name'
+    description: 'fede.estudios::lang.plugin.description'
+    author: Fede
+    icon: oc-icon-archive
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Estudios
+        url: fede/estudios/estudios
+        icon: icon-archive
+        sideMenu:
+            side-menu-item:
+                label: Info
+                url: fede/estudios/info
+                icon: icon-file-text-o
+            side-menu-item2:
+                label: Afirma
+                url: fede/estudios/afirma
+                icon: icon-sitemap
+            side-menu-item3:
+                label: 'Tus Estudios'
+                url: fede/estudios/estudiosusuario
+                icon: icon-sitemap
+            distro:
+                label: distro
+                url: fede/estudios/distro
+                icon: icon-sitemap
+            side-menu-item4:
+                label: Respuestas
+                url: fede/estudios/respuestas
+                icon: icon-sitemap

@@ -1,0 +1,9 @@
+afirma:
+  label: Afirmaciones
+  view: 
+    list: $/fede/estudios/models/afirma/columns.yaml
+    toolbarButtons: create|remove
+  manage:
+    form: $/fede/estudios/models/afirma/fields.yaml
+    showCheckboxes: true
+

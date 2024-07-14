@@ -1,0 +1,10 @@
+name: Distro
+form: $/fede/estudios/models/estudio/fields-distro.yaml
+modelClass: Fede\Estudios\Models\Estudio
+defaultRedirect: fede/estudios/distro
+create:
+    redirect: 'fede/estudios/distro/update/:id'
+    redirectClose: fede/estudios/distro
+update:
+    redirect: fede/estudios/distro
+    redirectClose: fede/estudios/distro

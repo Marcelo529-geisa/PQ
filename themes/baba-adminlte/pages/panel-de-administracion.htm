@@ -1,0 +1,54 @@
+title = "Panel"
+url = "/Panel"
+layout = "fixed"
+meta_title = "Panel"
+is_hidden = 0
+
+[viewBag]
+activeMenu = "panel"
+
+[builderList]
+modelClass = "Fede\Estudios\Models\Estudio"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "nombre"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+
+[session]
+security = "user"
+redirect = "acceder"
+==
+{% component 'session' %}
+
+<!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="box box-primary">
+          <div class="box-header with-border">
+            <h3 class="box-title">
+              Bienvenido
+            </h3>
+          </div>
+          <!-- /.box-header -->
+        </div>
+        <!-- ./col -->
+        
+        <!-- ./col -->
+      </div>
+      
+<div class="row">
+  <!-- Left col -->
+  <section class="col-lg-12">
+    <p>Use el menú de la izquierda para agregar estudios, usuarios y contenido.</p>
+  </section>
+      <!-- /.row -->
+      <!-- Main row -->
+   
+        <!-- /.Left col -->
+        <!-- right col (We are only adding the ID to make the widgets sortable)-->
+        <!-- right col -->
+      </div>
+      
+      <!-- /.row (main row) -->

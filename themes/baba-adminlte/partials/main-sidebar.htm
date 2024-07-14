@@ -1,0 +1,318 @@
+==
+<?php
+function onStart()
+{
+use RainLab\User\Models\User as User;
+use Fede\Estudios\Models\Estudio as Estudio;
+if (Session::has('estudio-id'))
+  {
+    $this['estudio-id'] = Session::get('estudio-id');
+    $this['estudio']=Estudio::find(Session::get('estudio-id'));
+    Session::put('estudio-titulo',$this['estudio']['titulo'] );
+
+   
+  }
+
+
+
+}
+?>
+==
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+
+
+    {% set mostrar ='false' %}
+    {% for grupos in user.groups %}
+    {% if grupos.id in [2,4,5] %}
+    {% set mostrar ='true' %}
+    {% endif %}
+    {% endfor %}
+    {% if mostrar == 'true' %}
+
+
+
+    {% endif %}
+
+    {% set mostrarSuperAdmin ='false' %}
+    {% for grupos in user.groups %}
+    {% if grupos.id in [5] %}
+    {% set mostrarSuperAdmin ='true' %}
+    {% endif %}
+    {% endfor %}
+    {% if mostrarSuperAdmin == 'true' %}
+
+
+
+    {% endif %}
+
+    {% set mostrarAdmin ='false' %}
+    {% for grupos in user.groups %}
+    {% if grupos.id in [5,2] %}
+    {% set mostrarAdmin ='true' %}
+    {% endif %}
+    {% endfor %}
+    {% if mostrarAdmin == 'true' %}
+
+
+
+    {% endif %}
+
+
+    {% set mostrarEditor ='false' %}
+    {% for grupos in user.groups %}
+    {% if grupos.id in [4,5,2] %}
+    {% set mostrarEditor ='true' %}
+    {% endif %}
+    {% endfor %}
+    {% if mostrarEditor == 'true' %}
+
+
+
+    {% endif %}
+
+    <ul class="sidebar-menu" data-widget="tree">
+
+
+
+      {% if mostrarEditor == 'true' %}
+      <li class="header">Administracion</li>
+      {% endif %}
+      {% if mostrarSuperAdmin == 'true' %}
+
+
+
+
+      <li
+        class="{{ (  viewBag.activeMenu == 'lista-admin') ? 'active' }} ">
+        <a href="{{ url('lista-usuarios/null/2')}}">
+          <i class="fa fa-users"></i> <span> Administradores</span>
+         
+        </a>
+       
+      </li>
+      <li
+      class="{{ (  viewBag.activeMenu == 'cuenta-mail' ) ? 'active' }} ">
+      <a href="{{ url('backend/system/settings/update/october/system/mail_settings')}}">
+        <i class="fa fa-envelope"></i> <span> Mail</span>
+        
+      </a>
+      
+    </li>
+
+      {% endif %}
+
+      {% if mostrarAdmin == 'true' %}
+
+
+
+
+
+      <li
+        class="{{ ( viewBag.activeMenu == 'lista-editores' ) ? 'active' }} ">
+        <a href="{{ url('lista-usuarios/null/4')}}">
+          <i class="fa fa-edit"></i> <span>Editores</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+
+        </a>
+      
+      </li>
+      <li
+        class="{{ (viewBag.activeMenu == 'editar-portada' or viewBag.activeMenu == 'cuenta-mail') ? 'active' }} treeview">
+        <a href="#">
+          <i class="fa fa-globe"></i> <span> Portada</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+
+          <li class="{{ viewBag.activeMenu == 'vista-previa-portada' ? 'active' }}"><a href="{{ url('/')}}"
+            
+              target="_blank')}}"><i class="fa fa-eye"></i> Vista Previa</a></li>
+          <li class="{{ viewBag.activeMenu == 'editar-portada'  ? 'active' }}"><a href="{{ url('lista-fotos')}}"><i
+                class="fa fa-edit"></i> Editar portada</a></li>
+
+
+
+
+        </ul>
+      </li>
+
+      {% endif %}
+
+      {% if mostrarEditor == 'true' %}
+
+
+
+
+
+      <li
+        class="{{ (viewBag.activeMenu == 'tus-estudios' or viewBag.activeMenu == 'nuevo-estudio' ) ? 'active' }} treeview">
+        <a href="#">
+          <i class="fa fa-folder"></i> <span> Tus Estudios</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li class="{{ viewBag.activeMenu == 'tus-estudios' ? 'active' }} ">
+            <a href="#" onclick="javascript:location.href='{{ url('/')}}/tusestudios'">
+              <i class="fa fa-table"></i> <span>Ver Lista</span>
+
+            </a>
+
+          </li>
+          <li class="{{ viewBag.activeMenu == 'nuevo-estudio' ? 'active' }} ">
+            <a href="#" onclick="javascript:location.href='{{  url('/')}}/crear-estudio'">
+              <i class="fa fa-edit"></i> <span>Nuevo Estudio</span>
+
+            </a>
+
+          </li>
+        </ul>
+
+
+        {% endif %}
+        {% if (this.session.get('estudio-id') and mostrarEditor == 'true' )%}
+      <li class="header">Estudio Actual</li>
+      <li class="{{ ( viewBag.activeMenu == 'estudio-vista-previa') 
+                        ? 'active' }} ">
+                        
+                        <a href="#"   onclick="javascript:location.href='{{  url('/')}}/editar-estudio/{{ this.session.get('estudio-id')}}'">
+                          <i class="fa fa-home"></i> <span></span>
+                          {{this.session.get('estudio-titulo')}}
+
+            
+
+            </a>
+          </li>
+      <li class="{{ ( viewBag.activeMenu == 'update-estudio' or 
+                        viewBag.activeMenu == 'paginas' or 
+                        viewBag.activeMenu == 'colaboradores' or 
+                        viewBag.activeMenu == 'correo' or
+                        viewBag.activeMenu == 'afirmaciones' or 
+                        viewBag.activeMenu == 'safirmaciones' or 
+                        viewBag.activeMenu == 'distribucion' or
+                        viewBag.activeMenu == 'Resultados'
+                        ) 
+                        ? 'active' }}  treeview">
+      <a href="#">Menu
+      
+        
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+      </a>
+        <ul class="treeview-menu">
+          <li class="{{ ( viewBag.activeMenu == 'estudio-vista-previa') 
+                        ? 'active' }} ">
+
+            <a href="{{ url('estudio/')}}/{{ this.session.get('estudio-id')}}" target="_blank">
+              <i class="fa fa-eye"></i> <span>Vista Previa</span>
+
+            </a>
+          </li>
+
+
+          <li class="{{ (viewBag.activeMenu == 'update-estudio' ) ? 'active' }} treeview">
+            <a href="#" onclick="javascript:location.href='{{  url('/')}}/update-estudio/{{this.session.get('estudio-id')}}'">
+              <i class="fa fa-align-justify"></i> <span>Descripción</span>
+
+            </a>
+          </li>
+
+          <li class="{{ (viewBag.activeMenu == 'paginas' ) ? 'active' }} treeview">
+
+            <a href="#" onclick="javascript:location.href='{{  url('/')}}/paginas/{{this.session.get('estudio-id')}}'">
+              <i class="fa fa-file"></i> </i><span>Páginas</span>
+
+            </a>
+          </li>
+          <li class="{{ (viewBag.activeMenu == 'colaboradores') ? 'active' }} treeview">
+            <a href="#"
+              onclick="javascript:location.href='{{  url('lista-usuarios')}}/{{this.session.get('estudio-id')}}/3'">
+              <i class="fa fa-user"></i> <span>Colaboradores</span>
+
+            </a>
+
+          </li>
+
+          <li class="{{ (viewBag.activeMenu == 'correo' ) ? 'active' }} ">
+            <a href="#"
+              onclick="javascript:location.href='{{  url('/')}}/correo/{{this.session.get('estudio-id')}}'">
+              <i class="fa fa-envelope"></i> <span>Participantes</span>
+             
+            </a>
+
+          </li>
+          <li
+            class="{{ (viewBag.activeMenu == 'invoice' or viewBag.activeMenu == 'login' or viewBag.activeMenu == 'register' or viewBag.activeMenu == 'blank') ? 'active' }} treeview">
+            <a href="#">
+              <i class="fa fa-question"></i> <span>Preguntas</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+
+          </li>
+          <li
+            class="{{ (viewBag.activeMenu == 'afirmaciones' or viewBag.activeMenu == 'distribucion' or viewBag.activeMenu == 'safirmaciones' ) ? 'active' }} treeview">
+            <a href="#">
+
+
+              <i class="fa fa-th"></i><span>Metodología Q</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+             <ul class="treeview-menu">
+             <li class="{{ viewBag.activeMenu == 'safirmaciones' ? 'active' }} ">
+            <a href="#" onclick="javascript:location.href='{{  url('/')}}/afirmaciones-desde-archivo/{{this.session.get('estudio-id')}}'">
+              <i class="fa fa-upload"></i> <span>Subir Afirmaciones</span>
+
+            </a>
+
+          </li>
+          <li class="{{ viewBag.activeMenu == 'afirmaciones' ? 'active' }} ">
+            <a href="#" onclick="javascript:location.href='{{  url('/')}}/afirmaciones/{{this.session.get('estudio-id')}}'">
+              <i class="fa fa-table"></i> <span>Ver Afirmaciones</span>
+
+            </a>
+
+          </li>
+          <li class="{{ viewBag.activeMenu == 'distribucion' ? 'active' }} ">
+            <a href="#" onclick="javascript:location.href='{{  url('/')}}/distribucion/{{this.session.get('estudio-id')}}'">
+              <i class="fa fa-edit"></i> <span>Distribución</span>
+
+            </a>
+
+          </li>
+        </ul>
+
+
+          </li>
+          <li
+            class="{{ (viewBag.activeMenu == 'Resultados') ? 'active' }} ">
+            <a href="#" onclick="javascript:location.href='{{  url('/')}}/resultados/{{this.session.get('estudio-id')}}'">
+              <i class="fa fa-arrow-down"></i> <span>Resultados</span>
+              
+            </a>
+
+          </li>
+          
+        </ul>
+      </li>
+      {% endif %}
+      {% if mostrarEditor %}
+
+    </ul>
+    {% endif %}
+  </section>
+  <!-- /.sidebar -->
+</aside>

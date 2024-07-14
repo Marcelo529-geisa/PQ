@@ -1,0 +1,6 @@
+plugin:
+    name: 'fede.profile::lang.plugin.name'
+    description: 'fede.profile::lang.plugin.description'
+    author: Fede
+    icon: oc-icon-user
+    homepage: ''

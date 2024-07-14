@@ -1,0 +1,15 @@
+<h1>hola front form</h1>
+
+
+
+<form role="form"
+    data-request="onSave"
+    data-request-success="$el.hide();$('.confirm-container').removeClass('hide');">
+
+{{ palos.formRender()|raw }}
+
+<div class="form-group">
+    <button class="btn btn-primary btn-block btn-lg" type="submit" value="register">Create</button>
+</div>
+{{close_form}}
+

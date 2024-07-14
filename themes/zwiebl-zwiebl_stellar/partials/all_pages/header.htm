@@ -1,0 +1,14 @@
+==
+<!-- Header -->
+<header id="header" class="alt">
+    
+    <h1>
+{% if record %}
+    {{ attribute(record, displayColumn) }}
+    
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}
+ </h1>
+    <p>{{ this.page.description|raw }}</p>
+</header>

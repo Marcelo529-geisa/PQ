@@ -1,0 +1,73 @@
+title = "Lista fotos"
+url = "/lista-fotos"
+layout = "fixed"
+is_hidden = 0
+
+[builderList]
+modelClass = "Fede\Portada\Models\Portada"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "titulo"
+noRecordsMessage = "No records found"
+detailsPage = "actualizar-foto"
+detailsKeyColumn = "id"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+
+
+[viewBag]
+activeMenu = "editar-portada"
+==
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+        <!-- /.box-header -->
+            <div class="box-body">
+            <a href="fotos-portada"><button type="submit" class="btn btn-info">Agregar Foto</button></a>
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Imagen</th>
+                </tr>
+                </thead>
+                <tbody>
+
+
+
+
+    {% for record in records %}
+      <tr>
+                  <td>  {% spaceless %}
+                   {% if detailsPage %}
+                    <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+                {% endif %}
+               
+                
+                {{ record.titulo }}
+ {% if detailsPage %}
+                    </a>
+                {% endif %}
+               
+            {% endspaceless %}</td>
+                  <td>
+                  <img src="{{ record.fileupload1.path }}" style="width: 200px; height: auto;" alt="">
+
+                  
+                  </td>
+                  
+                  
+                </tr>
+       
+                {% else %}
+        {{ noRecordsMessage }}
+    {% endfor %}
+
+              
+                </tbody>
+                
+              </table>

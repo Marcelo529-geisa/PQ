@@ -1,0 +1,19 @@
+title = "Afirmaciones desde Archivo"
+url = "/afirmaciones-desde-archivo/:id"
+layout = "fixed"
+is_hidden = 0
+
+[AfirmaDeArch]
+
+
+[viewBag]
+activeMenu = "safirmaciones"
+==
+function onInit()
+{
+  
+    Session::put('estudio-id',$this->param('id') );
+   
+}
+==
+{% component 'AfirmaDeArch' %}

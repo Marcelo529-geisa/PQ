@@ -1,0 +1,24 @@
+<form role="form" method="POST" action= "{{ url ('fotos-portada')}}" accept-charset="UTF8" enctype="multipart/form-data">
+  <input type="hidden" name="_handler" value="onSave">  
+  {{ form_token() }}
+  {{ form_sessionKey() }}
+  <div class="box-body">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Título de otra cosa</label>
+        <input  class="form-control" name="titulo" id="titulo" placeholder="titulo de la foto">
+      </div>
+       <!-- textarea -->
+      <div class="form-group">
+        <input type="file"  class="form-control" name="foto" id="foto" placeholder="escriba un título descriptivo de todo el estudio">
+      </div>
+     
+    </div>
+    <!-- /.box-body -->
+
+    <div class="box-footer">
+      <button type="submit" data-attach-loading class="btn btn-primary">Grabar</button>
+    </div>
+    {% flash success %}
+     <p>{{message}}</p>
+    {% endflash %}
+  </form>

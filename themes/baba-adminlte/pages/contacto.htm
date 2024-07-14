@@ -1,0 +1,36 @@
+title = "Contacto"
+url = "/contacto"
+is_hidden = 0
+
+[contactform]
+==
+<!DOCTYPE html>
+<html lang="en">
+
+{% partial "cabeza" %}
+<body>
+
+ <!-- Add your content of header -->
+ {% partial "cabezera" %}
+
+<div class="section-container">
+  <!-- Add your site or app content here -->
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-xs-12 col-md-12">
+       
+
+        
+        {% component 'contactform' %}
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+{% partial "pie" %}
+</html>

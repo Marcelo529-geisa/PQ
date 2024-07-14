@@ -1,0 +1,29 @@
+<div>
+    <form role="form"
+    data-request="onUpdate"
+    data-request-success="$el.hide();$('.confirm-container').removeClass('hide');">
+    
+
+
+    {{ widget.render()|raw }}
+ 
+<div class="form-group">
+    <button class="btn btn-primary btn-block btn-lg" type="submit" value="register">Actualizar</button>
+</div>
+{{ form_close() }}
+</div>
+
+<div>
+    <form role="form"
+    data-request="onUpdate"
+    data-request-success="$el.hide();$('.confirm-container').removeClass('hide');">
+    
+
+
+    {{ widget2.render()|raw }}
+ 
+<div class="form-group">
+    <button class="btn btn-primary btn-block btn-lg" type="submit" value="register">Actualizar</button>
+</div>
+{{ form_close() }}
+</div>

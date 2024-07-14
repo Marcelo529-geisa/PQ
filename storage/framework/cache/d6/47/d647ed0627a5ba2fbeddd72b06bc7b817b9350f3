@@ -1,0 +1,89 @@
+1720984394a:1:{s:12:"portada2.htm";a:9:{s:8:"fileName";s:12:"portada2.htm";s:7:"content";s:1194:"title = "Portada2"
+url = "/"
+is_hidden = 0
+
+[builderList]
+modelClass = "Fede\Portada\Models\Portada"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "id"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+<!DOCTYPE html>
+<html lang="en">
+  {% partial "cabeza" %}
+
+<body>
+
+ <!-- Add your content of header -->
+{% partial "cabezera" %}
+
+  
+<div class="hero-full-container background-image-container white-text-container" style="background-image:url('{{ records[1].fileupload1.path }}')">
+  <div class="overlay-gradient"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-7 col-md-offset-1">
+        <div class="hero-full-wrapper">
+          <div class="text-content">
+            <h1>Plataforma Q</h1>
+            <p>Soporte y herramientas para el desarrollo de estudios de percepción social utilizando la metodología Q</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    navbarFixedTopAnimation();
+    closeMenuBeforeGoingToPage();
+  });
+</script>
+
+
+
+
+{% partial "pie" %}
+</html>";s:5:"mtime";i:1716599845;s:6:"markup";s:919:"<!DOCTYPE html>
+<html lang="en">
+  {% partial "cabeza" %}
+
+<body>
+
+ <!-- Add your content of header -->
+{% partial "cabezera" %}
+
+  
+<div class="hero-full-container background-image-container white-text-container" style="background-image:url('{{ records[1].fileupload1.path }}')">
+  <div class="overlay-gradient"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-7 col-md-offset-1">
+        <div class="hero-full-wrapper">
+          <div class="text-content">
+            <h1>Plataforma Q</h1>
+            <p>Soporte y herramientas para el desarrollo de estudios de percepción social utilizando la metodología Q</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    navbarFixedTopAnimation();
+    closeMenuBeforeGoingToPage();
+  });
+</script>
+
+
+
+
+{% partial "pie" %}
+</html>";s:4:"code";N;s:5:"title";s:8:"Portada2";s:3:"url";s:1:"/";s:9:"is_hidden";s:1:"0";s:11:"builderList";a:8:{s:10:"modelClass";s:27:"Fede\Portada\Models\Portada";s:5:"scope";s:1:"-";s:10:"scopeValue";s:12:"{{ :scope }}";s:13:"displayColumn";s:2:"id";s:16:"noRecordsMessage";s:16:"No records found";s:11:"detailsPage";s:1:"-";s:19:"detailsUrlParameter";s:2:"id";s:10:"pageNumber";s:11:"{{ :page }}";}}}

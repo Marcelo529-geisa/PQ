@@ -1,0 +1,10 @@
+name: Estudios
+form: $/fede/estudios/models/estudio/fields.yaml
+modelClass: Fede\Estudios\Models\Estudio
+defaultRedirect: fede/estudios/estudios
+create:
+    redirect: 'fede/estudios/estudios/update/:id'
+    redirectClose: fede/estudios/estudios
+update:
+    redirect: fede/estudios/estudios
+    redirectClose: fede/estudios/estudios

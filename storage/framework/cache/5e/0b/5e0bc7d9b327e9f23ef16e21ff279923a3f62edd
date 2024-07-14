@@ -1,0 +1,21 @@
+1720984394a:1:{s:19:"actualizar-user.htm";a:10:{s:8:"fileName";s:19:"actualizar-user.htm";s:7:"content";s:271:"title = "Actualizar User"
+url = "/actualizar-user/:id"
+layout = "fixed"
+is_hidden = 0
+
+[ActualizarUsuario]
+
+==
+use RainLab\User\Models\UserGroup as User;
+function onInit() {
+
+$this['user'] = User::find(Session::get('user-id') );
+}
+
+
+==
+{% component 'ActualizarUsuario' %}";s:5:"mtime";i:1632348559;s:6:"markup";s:35:"{% component 'ActualizarUsuario' %}";s:4:"code";s:119:"use RainLab\User\Models\UserGroup as User;
+function onInit() {
+
+$this['user'] = User::find(Session::get('user-id') );
+}";s:5:"title";s:15:"Actualizar User";s:3:"url";s:20:"/actualizar-user/:id";s:6:"layout";s:5:"fixed";s:9:"is_hidden";s:1:"0";s:17:"ActualizarUsuario";a:0:{}}}

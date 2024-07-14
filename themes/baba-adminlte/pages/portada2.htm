@@ -1,0 +1,52 @@
+title = "Portada2"
+url = "/"
+is_hidden = 0
+
+[builderList]
+modelClass = "Fede\Portada\Models\Portada"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "id"
+noRecordsMessage = "No records found"
+detailsPage = "-"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+==
+<!DOCTYPE html>
+<html lang="en">
+  {% partial "cabeza" %}
+
+<body>
+
+ <!-- Add your content of header -->
+{% partial "cabezera" %}
+
+  
+<div class="hero-full-container background-image-container white-text-container" style="background-image:url('{{ records[1].fileupload1.path }}')">
+  <div class="overlay-gradient"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-7 col-md-offset-1">
+        <div class="hero-full-wrapper">
+          <div class="text-content">
+            <h1>Plataforma Q</h1>
+            <p>Soporte y herramientas para el desarrollo de estudios de percepción social utilizando la metodología Q</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    navbarFixedTopAnimation();
+    closeMenuBeforeGoingToPage();
+  });
+</script>
+
+
+
+
+{% partial "pie" %}
+</html>

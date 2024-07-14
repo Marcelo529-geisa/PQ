@@ -1,0 +1,16 @@
+fields:
+    titulo:
+        label: Titulo
+        span: auto
+        type: text
+    fileupload1:
+        label: Foto
+        mode: image
+        imageWidth: '100'
+        imageHeight: '100'
+        useCaption: true
+        thumbOptions:
+            mode: landscape
+            extension: auto
+        span: auto
+        type: fileupload

@@ -1,0 +1,535 @@
+1720984394a:1:{s:11:"estudio.htm";a:10:{s:8:"fileName";s:11:"estudio.htm";s:7:"content";s:7152:"title = "estudio"
+url = "/estudio/:id"
+is_hidden = 0
+
+[builderDetails]
+modelClass = "Fede\Estudios\Models\Estudio"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "titulo"
+notFoundMessage = "Record not found"
+
+[localePicker]
+forceUrl = 0
+==
+use Fede\Estudios\Models\Estudio as Estudio;
+use RainLab\User\Models\UserGroup as UserGroup;
+
+function onInit() {
+$this['estudio']=Estudio::find($this->param('id'));
+$this['usuarios_estudio']=$this['estudio']->users()->get();
+
+
+$this['todos_colabor'] = UserGroup::find(3)->users()->pluck('id');
+$this['estudio_colabor'] = $this['usuarios_estudio'] ->whereIn('id',$this['todos_colabor']);
+}
+==
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>{% if record %}
+		{{ attribute(record, displayColumn) }}
+
+		{% else %}
+		{{ notFoundMessage }}
+		{% endif %}</title>
+	<meta charset="utf-8" />
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{{'assets/assets3/css/main.css'|theme}}" />
+	<noscript>
+		<link rel="stylesheet" href="{{'assets/assets3/css/noscript.css'|theme}}" /></noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+
+
+		<!-- Header -->
+		<header id="header">
+
+			<h1>
+				{% if record %}
+				{{ attribute(record, displayColumn) }}
+
+				{% else %}
+				{{ notFoundMessage }}
+				{% endif %}
+			</h1>
+			<p>{{ this.page.description|raw }}</p>
+			<div class="form-group"
+			style="position: absolute;
+top: 0px;
+width: 20%;
+right: 10px;
+font-size: large;" 
+>{% component 'localePicker' %}</div>
+		</header>
+		{% set record = builderDetails.record %}
+		{% set displayColumn = builderDetails.displayColumn %}
+		{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				{% for record in record.info %}
+				<li><a href="#{{record.etiqueta}}">{{record.etiqueta}}</a></li>
+				{% endfor %}
+				<li><a href="#colaboradores">{{ 'Equipo'|_}}</a></li>
+				<li><a href="#cta">{{ 'Responder'|_ }}</a></li>
+				<li></li>
+			</ul>
+
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+
+
+			{% for record in record.info %}
+
+			<section id="{{record.etiqueta}}" class="main">
+				<div class="spotlight">
+					<div class="content">
+						<header class="major">
+							<h2>
+								{% spaceless %}
+								{% if detailsPage %}
+								<a
+									href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+									{% endif %}
+
+									{{ attribute(record, displayColumn) }}
+
+									{% if detailsPage %}
+								</a>
+								{% endif %}
+								{% endspaceless %}
+
+							</h2>
+						</header>
+						<p>{{ record.cuerpo|raw }}</p>
+
+					</div>
+
+				</div>
+			</section>
+
+			{% endfor %}
+
+
+
+			<section id="colaboradores" class="main">
+			
+				<div class="spotlight">
+					<div class="content">
+						<header class="major">
+							<h2>
+								Responsable
+
+							</h2>
+						</header>
+
+
+						<section id="intro" class="main">
+							<div class="spotlight">
+
+						
+								<div class="content"style="float: left;">
+									
+									<header class="major">
+										<h3><strong> {{ record.user.name }} </strong></h3> <a
+											href="mailto:{{ record.user.email }}">{{ record.user.email }}</a>
+									</header>
+									<p>{{ record.user.bio }}</p>
+
+								</div>
+								
+								
+									<span class="image"><img src="{{record.user.avatar.path}}"  style="width: 200px; height: auto;display: block;
+										border-radius: 100%;" alt="" /></span>
+							</div>
+						</section>
+						</div>
+
+						
+					</div>
+
+					<hr>
+				<div class="spotlight">
+					<div class="content">
+						<header class="major">
+							<h2>
+								Colaboradores
+
+							</h2>
+						</header>
+
+
+
+						{% for user in estudio_colabor %}
+
+						<section id="intro" class="main">
+							<div class="spotlight">
+								<div class="content">
+									<header class="major">
+										<h3><strong> {{ user.name }} </strong></h3> <a
+											href="mailto:{{ user.email }}">{{ user.email }}</a>
+									</header>
+									<p>{{ user.bio }}</p>
+
+								</div>
+								<span class="image"><img src="{{user.avatar.path}}" style="width: 200px; height: auto;" alt="" /></span>
+							</div>
+						</section>
+						<hr>
+
+						{% endfor %}
+
+					</div>
+
+				</div>
+			</section>
+			
+			<!-- Get Started class="main special" -->
+			<section id="cta" >
+				<header class="major">
+				<!--	<h2>{{ 'Hacer la encuesta'|_ }}</h2>
+					<p>{{ 'Si estás listo vamos pa delante'|_ }}</p>
+					-->
+				</header>
+				<footer class="major">
+					<ul class="actions special">
+						<li><a href="{{ url('/responde/')  }}/{{record.id}}"
+								class="button primary">{{'Responder ahora'|_ }}</a></li>
+
+					</ul>
+				</footer>
+			</section>
+		</br>
+
+	</br>
+
+
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+		<!--	<section>
+				<h2>Aliquam sed mauris</h2>
+				<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam
+					dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat
+					egestas velit, vitae tincidunt odio.</p>
+				<ul class="actions">
+					<li><a href="generic.html" class="button">Learn More</a></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Etiam feugiat</h2>
+				<dl class="alt">
+					<dt>Address</dt>
+					<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+					<dt>Phone</dt>
+					<dd>(000) 000-0000 x 0000</dd>
+					<dt>Email</dt>
+					<dd><a href="#">information@untitled.tld</a></dd>
+				</dl>
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+				</ul>
+			</section>
+			<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+		-->
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="{{'assets/assets3/js/jquery.min.js'|theme}}"></script>
+	<script src="{{'assets/assets3/js/jquery.scrollex.min.js'|theme}}"></script>
+	<script src="{{'assets/assets3/js/jquery.scrolly.min.js'|theme}}"></script>
+	<script src="{{'assets/assets3/js/browser.min.js'|theme}}"></script>
+	<script src="{{'assets/assets3/js/breakpoints.min.js'|theme}}"></script>
+	<script src="{{'assets/assets3/js/util.js'|theme}}"></script>
+	<script src="{{'assets/assets3/js/main.js'|theme}}"></script>
+	{% framework extras %}
+
+
+</body>
+
+</html>";s:5:"mtime";i:1636647033;s:6:"markup";s:6472:"<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>{% if record %}
+		{{ attribute(record, displayColumn) }}
+
+		{% else %}
+		{{ notFoundMessage }}
+		{% endif %}</title>
+	<meta charset="utf-8" />
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="{{'assets/assets3/css/main.css'|theme}}" />
+	<noscript>
+		<link rel="stylesheet" href="{{'assets/assets3/css/noscript.css'|theme}}" /></noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+
+
+		<!-- Header -->
+		<header id="header">
+
+			<h1>
+				{% if record %}
+				{{ attribute(record, displayColumn) }}
+
+				{% else %}
+				{{ notFoundMessage }}
+				{% endif %}
+			</h1>
+			<p>{{ this.page.description|raw }}</p>
+			<div class="form-group"
+			style="position: absolute;
+top: 0px;
+width: 20%;
+right: 10px;
+font-size: large;" 
+>{% component 'localePicker' %}</div>
+		</header>
+		{% set record = builderDetails.record %}
+		{% set displayColumn = builderDetails.displayColumn %}
+		{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				{% for record in record.info %}
+				<li><a href="#{{record.etiqueta}}">{{record.etiqueta}}</a></li>
+				{% endfor %}
+				<li><a href="#colaboradores">{{ 'Equipo'|_}}</a></li>
+				<li><a href="#cta">{{ 'Responder'|_ }}</a></li>
+				<li></li>
+			</ul>
+
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+
+
+			{% for record in record.info %}
+
+			<section id="{{record.etiqueta}}" class="main">
+				<div class="spotlight">
+					<div class="content">
+						<header class="major">
+							<h2>
+								{% spaceless %}
+								{% if detailsPage %}
+								<a
+									href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+									{% endif %}
+
+									{{ attribute(record, displayColumn) }}
+
+									{% if detailsPage %}
+								</a>
+								{% endif %}
+								{% endspaceless %}
+
+							</h2>
+						</header>
+						<p>{{ record.cuerpo|raw }}</p>
+
+					</div>
+
+				</div>
+			</section>
+
+			{% endfor %}
+
+
+
+			<section id="colaboradores" class="main">
+			
+				<div class="spotlight">
+					<div class="content">
+						<header class="major">
+							<h2>
+								Responsable
+
+							</h2>
+						</header>
+
+
+						<section id="intro" class="main">
+							<div class="spotlight">
+
+						
+								<div class="content"style="float: left;">
+									
+									<header class="major">
+										<h3><strong> {{ record.user.name }} </strong></h3> <a
+											href="mailto:{{ record.user.email }}">{{ record.user.email }}</a>
+									</header>
+									<p>{{ record.user.bio }}</p>
+
+								</div>
+								
+								
+									<span class="image"><img src="{{record.user.avatar.path}}"  style="width: 200px; height: auto;display: block;
+										border-radius: 100%;" alt="" /></span>
+							</div>
+						</section>
+						</div>
+
+						
+					</div>
+
+					<hr>
+				<div class="spotlight">
+					<div class="content">
+						<header class="major">
+							<h2>
+								Colaboradores
+
+							</h2>
+						</header>
+
+
+
+						{% for user in estudio_colabor %}
+
+						<section id="intro" class="main">
+							<div class="spotlight">
+								<div class="content">
+									<header class="major">
+										<h3><strong> {{ user.name }} </strong></h3> <a
+											href="mailto:{{ user.email }}">{{ user.email }}</a>
+									</header>
+									<p>{{ user.bio }}</p>
+
+								</div>
+								<span class="image"><img src="{{user.avatar.path}}" style="width: 200px; height: auto;" alt="" /></span>
+							</div>
+						</section>
+						<hr>
+
+						{% endfor %}
+
+					</div>
+
+				</div>
+			</section>
+			
+			<!-- Get Started class="main special" -->
+			<section id="cta" >
+				<header class="major">
+				<!--	<h2>{{ 'Hacer la encuesta'|_ }}</h2>
+					<p>{{ 'Si estás listo vamos pa delante'|_ }}</p>
+					-->
+				</header>
+				<footer class="major">
+					<ul class="actions special">
+						<li><a href="{{ url('/responde/')  }}/{{record.id}}"
+								class="button primary">{{'Responder ahora'|_ }}</a></li>
+
+					</ul>
+				</footer>
+			</section>
+		</br>
+
+	</br>
+
+
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+		<!--	<section>
+				<h2>Aliquam sed mauris</h2>
+				<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam
+					dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat
+					egestas velit, vitae tincidunt odio.</p>
+				<ul class="actions">
+					<li><a href="generic.html" class="button">Learn More</a></li>
+				</ul>
+			</section>
+			<section>
+				<h2>Etiam feugiat</h2>
+				<dl class="alt">
+					<dt>Address</dt>
+					<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+					<dt>Phone</dt>
+					<dd>(000) 000-0000 x 0000</dd>
+					<dt>Email</dt>
+					<dd><a href="#">information@untitled.tld</a></dd>
+				</dl>
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+				</ul>
+			</section>
+			<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+		-->
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="{{'assets/assets3/js/jquery.min.js'|theme}}"></script>
+	<script src="{{'assets/assets3/js/jquery.scrollex.min.js'|theme}}"></script>
+	<script src="{{'assets/assets3/js/jquery.scrolly.min.js'|theme}}"></script>
+	<script src="{{'assets/assets3/js/browser.min.js'|theme}}"></script>
+	<script src="{{'assets/assets3/js/breakpoints.min.js'|theme}}"></script>
+	<script src="{{'assets/assets3/js/util.js'|theme}}"></script>
+	<script src="{{'assets/assets3/js/main.js'|theme}}"></script>
+	{% framework extras %}
+
+
+</body>
+
+</html>";s:4:"code";s:399:"use Fede\Estudios\Models\Estudio as Estudio;
+use RainLab\User\Models\UserGroup as UserGroup;
+
+function onInit() {
+$this['estudio']=Estudio::find($this->param('id'));
+$this['usuarios_estudio']=$this['estudio']->users()->get();
+
+
+$this['todos_colabor'] = UserGroup::find(3)->users()->pluck('id');
+$this['estudio_colabor'] = $this['usuarios_estudio'] ->whereIn('id',$this['todos_colabor']);
+}";s:5:"title";s:7:"estudio";s:3:"url";s:12:"/estudio/:id";s:9:"is_hidden";s:1:"0";s:14:"builderDetails";a:5:{s:10:"modelClass";s:28:"Fede\Estudios\Models\Estudio";s:15:"identifierValue";s:9:"{{ :id }}";s:14:"modelKeyColumn";s:2:"id";s:13:"displayColumn";s:6:"titulo";s:15:"notFoundMessage";s:16:"Record not found";}s:12:"localePicker";a:1:{s:8:"forceUrl";s:1:"0";}}}
