@@ -1,0 +1,12 @@
+1722527918a:1:{s:23:"crear-administrador.htm";a:11:{s:8:"fileName";s:23:"crear-administrador.htm";s:7:"content";s:185:"title = "Crear Administrador"
+url = "/crear-administrador"
+layout = "fixed"
+is_hidden = 0
+
+[CrearAdmin]
+
+
+[viewBag]
+activeMenu = "crear-admin"
+==
+{% component 'CrearAdmin' %}";s:5:"mtime";i:1721000997;s:6:"markup";s:28:"{% component 'CrearAdmin' %}";s:4:"code";N;s:5:"title";s:19:"Crear Administrador";s:3:"url";s:20:"/crear-administrador";s:6:"layout";s:5:"fixed";s:9:"is_hidden";s:1:"0";s:10:"CrearAdmin";a:0:{}s:7:"viewBag";a:1:{s:10:"activeMenu";s:11:"crear-admin";}}}

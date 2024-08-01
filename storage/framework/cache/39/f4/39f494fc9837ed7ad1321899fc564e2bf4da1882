@@ -1,0 +1,57 @@
+1722527918a:1:{s:11:"acceder.htm";a:12:{s:8:"fileName";s:11:"acceder.htm";s:7:"content";s:515:"title = "acceder"
+url = "/acceder"
+layout = "fixed"
+is_hidden = 0
+
+[account]
+paramCode = "code"
+forceSecure = 0
+
+[session]
+security = "all"
+
+[UpdateUsuario]
+==
+{% component 'session' %}
+{% if not user %}
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <h3>Sign In</h3>
+            {% partial account ~ '::signin' %}
+        </div>
+
+      
+    </div>
+
+{% else %}
+
+   
+
+    {% partial 'user-update' %}
+
+    {% partial account ~ '::deactivate_link' %}
+
+{% endif %}";s:5:"mtime";i:1721000997;s:6:"markup";s:341:"{% component 'session' %}
+{% if not user %}
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <h3>Sign In</h3>
+            {% partial account ~ '::signin' %}
+        </div>
+
+      
+    </div>
+
+{% else %}
+
+   
+
+    {% partial 'user-update' %}
+
+    {% partial account ~ '::deactivate_link' %}
+
+{% endif %}";s:4:"code";N;s:5:"title";s:7:"acceder";s:3:"url";s:8:"/acceder";s:6:"layout";s:5:"fixed";s:9:"is_hidden";s:1:"0";s:7:"account";a:2:{s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}s:7:"session";a:1:{s:8:"security";s:3:"all";}s:13:"UpdateUsuario";a:0:{}}}

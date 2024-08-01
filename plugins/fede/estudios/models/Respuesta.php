@@ -15,11 +15,17 @@ class Respuesta extends Model
      */
     public $table = 'fede_estudios_respuestas';
 
+    protected $fillable = ['estudio_id'];
+
     /**
      * @var array Validation rules
      */
     public $rules = [
     ];
     protected $jsonable = ['respuestas'];
+
+    public function estudios(){
+        return $this->hasMany('Fede\Estudios\Models\Estudio');
+       }
 
 }

@@ -362,4 +362,7 @@
   'Fede\\Contact\\Models\\Contacto' => 'plugins/fede/contact/models/Contacto.php',
   'Fede\\CrearUsuario\\Components\\Crear' => 'plugins/fede/crearusuario/components/Crear.php',
   'System\\Classes\\MediaLibraryItem' => 'modules/system/classes/MediaLibraryItem.php',
+  'backend\\Controllers\\index' => 'modules\\backend\\controllers\\index.php',
+  'backend\\Controllers\\auth' => 'modules\\backend\\controllers\\auth.php',
+  'cms\\Controllers\\index' => 'modules\\cms\\controllers\\index.php',
 );

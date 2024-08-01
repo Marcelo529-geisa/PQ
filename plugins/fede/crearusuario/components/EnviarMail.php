@@ -17,6 +17,7 @@ use RainLab\User\Models\UserGroup as UserGroup;
 
 use RainLab\User\Models\User as User;
 use Fede\Estudios\Models\Estudio as Estudio;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -34,22 +35,25 @@ class EnviarMail extends ComponentBase
 
         $estudio=Estudio::find($this->param('id'));
         $usuarios_estudio=$estudio->users()->get();
-         
-        
+                 
         $todos_part= UserGroup::find(1)->users()->pluck('id');
         $estudio_part = $usuarios_estudio ->whereIn('id',$todos_part);
         $estudio_part_id = $estudio_part->pluck('id')->all();
-        
-        
+
         $respuestas=Responde::where('estudios_id',$this->param('id'))->pluck('user_id')->toArray();
-      
+        /*marcelo*/
+        $respuestas_3=$estudio->respuesta_user();
+
         $this->page['participantes']=$estudio_part;
         $this->page['respuestas']=$respuestas;
-    
+        $this->page['estudio_part_id']= $respuestas_3;
+        
+                  
     }
     public function onSendMasivo(){
     
-        $respuestas=Responde::where('estudios_id',$this->param('id'))->pluck('user_id')->toArray();
+        //$respuestas=Responde::where('estudios_id',$this->param('id'))->pluck('user_id')->toArray();
+        //$respuestas=Responde::select('')ere('estudios_id',$this->param('id'))->count('user_id')->toArray();
         
         $estudio=Estudio::find($this->param('id'));
         $usuarios_estudio=$estudio->users()->get();
@@ -118,7 +122,7 @@ class EnviarMail extends ComponentBase
             $tag="#enviado-".Input::get('user-id');
             Flash::success('Correo  enviado!');
             return [ $tag => "<td>enviado</td>"];
-           
+                                  
 
         }
         

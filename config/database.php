@@ -59,7 +59,7 @@ return [
             'port'       => 3306,
             'database'   => 'plataformaq',
             'username'   => 'root',
-            'password'   => 'FAlbesa.2021',
+            /*'password'   => 'FAlbesa.2021',*/
             'charset'    => 'utf8mb4',
             'collation'  => 'utf8mb4_unicode_ci',
             'prefix'     => '',

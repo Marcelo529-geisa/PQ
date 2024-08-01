@@ -4,7 +4,7 @@ use Model;
 use Auth;
 use RainLab\User\Models\User as User;
 use RainLab\User\Models\UserGroup as UserGroup;
-
+use Fede\Estudios\Models\Respuesta as Respuesta;
 
 /**
  * Model
@@ -12,15 +12,11 @@ use RainLab\User\Models\UserGroup as UserGroup;
 class Estudio extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
     use \October\Rain\Database\Traits\SoftDelete;
+
     public $implement = ['RainLab.Translate.Behaviors.TranslatableModel'];
-
     public $translatable = ['titulo','descripcion'];   
-
     protected $dates = ['deleted_at'];
-
-
     /**
      * @var string The database table used by the model.
      */
@@ -34,36 +30,34 @@ class Estudio extends Model
     ];
 
     public $morphToMany = [
- 
-        'users' => [
+         'users' => [
             'RainLab\User\Models\User',
             'table'=>'fede_estudios_users',
             'pivot' => ['enviado'],
             'name'=>'usable'
         ]
     ];
+ 
     public $hasMany= [
         'info'=>
             'Fede\Estudios\Models\Info',
         'afirma'=>
             'Fede\Estudios\Models\Afirma',
-        
-            
-        
     ];
+
     public $belongsTo = [
         'user'=> [
             'RainLab\User\Models\User',
-            
-
         ]
     ];
 
-    
-    
     public function scopeUsuario($query){
         $user_id = Auth::getUser()->id;
         return $query->where('user_id',$user_id);
     }
     
+    public function respuesta_user(){
+       // return  Respuesta::where('estudios_id', $this->id)->get();
+        return Respuesta::where('estudios_id', $this->id)->get();
+        }
 }

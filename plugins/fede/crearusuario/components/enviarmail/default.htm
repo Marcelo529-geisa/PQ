@@ -58,101 +58,93 @@
           <div class="box-body">
             <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
          
-                <table id="example2" class="table table-bordered table-hover">
+            <table id="example2" class="table table-bordered table-hover">
               <thead>
               <tr >
                 <th>Nombre</th>
                 <th>Con Respuesta</th>                  
                 <th>mail</th>
                 <th></th>
-                
                 <th>invitación</th>
                 <th></th>
               </tr>
               </thead>
               <tbody>
-             
-
-
-  {% for user in participantes %}
-  
+              {% for user in participantes %}
     
-  
-      <tr id="usuario-{{user.id}}">
-                  <td>  
-             {{user.id}} -   {{ user.name }}</td>
-                <td>
-                    {% if user.id  in respuestas %}
-                    <i class="ion ion-ios-checkmark-outline"></i>
-                    
+                <tr id="usuario-{{user.id}}">
+                            <td>  
+                      {{user.id}} -   {{ user.name }}</td>
+                          <td>
+                            <!--marcelo-->
+                            {# respuestas[0].tot #}
+                      
+                            {% set count = 0 %}
+                            {% for item in estudio_part_id %}
+                                {% if user.id == item.user_id %}
+                                  {% set count = count + 1 %}
+                                {% endif %}
+                            {% endfor %}
+                            {{ count }} 
+                          </td>
+                          <td>
+                            {{ user.email }}
+                          </td>
+                          <td >
+                         
+                          {% if n_elementos == record.afirma.count  %}
+                            <form data-request="EnviarMail::onSend" data-request-flash>
+                              <input name="user-mail" type="hidden" value="{{user.mail}}" />
+                              <input name="user-id" type="hidden" value="{{user.id}}"/>
+                              <input name="user-name" type="hidden" value="{{user.name}}"/>
 
-                    {% else %}
-                    x
-                    {% endif %}      
-                </td>
-                  <td>
-                   {{ user.email }}
-                  </td>
-                  <td >
-                    {% if n_elementos == record.afirma.count  %}
+                              <span data-validate-for="name"></span>
+                                 <!--marcelo--> 
+                              {% if user.pivot['enviado'] is not null %}
+                                <button data-attach-loading style = "cursor: not-allowed;
+                                background-color: rgb(229, 229, 229);
+                                pointer-events:none;border: none;color: white;">
+                                    Enviar
+                                </button>
+                              {% else%}
+                                <button data-attach-loading>
+                                    Enviar
+                                </button>
+                              {% endif %}
+                            </form>
+                          {% else %}
+                            <button disabled>
+                              Enviar
+                            </button>
+                          {% endif %}
 
-                    <form
-                    data-request="EnviarMail::onSend"
-                    
-                    data-request-flash>
-                    <input name="user-mail" type="hidden" value="{{user.mail}}" />
-                    <input name="user-id" type="hidden" value="{{user.id}}"/>
-                    <input name="user-name" type="hidden" value="{{user.name}}"/>
-
-                    <span data-validate-for="name"></span>
- <button data-attach-loading>
-        Enviar
-    </button>
-</form>
-{% else %}
-<button disabled>
-  Enviar
-</button>
-{% endif %}
-
-                  </td>
-                  <td id ="enviado-{{user.id}}">
-                
-                    {% if user.pivot.enviado==1  %}
-                    ya enviado
-                    {% else%}
-                    pendiente
-                    {% endif %}
-                
-                  </td>
-                  <td>
-                    <form
-                    data-request="EnviarMail::onDelete"
-                    
-                    data-request-flash>
-                   
-                    <input name="user-id" type="hidden" value="{{user.id}}"/>
-                   
-
-                    <span data-validate-for="name"></span>
- <button data-attach-loading>
-        Borrar
-    </button>
-</form>
-                  </td>
-                  
-                  
+                          </td>
+                          <td id ="enviado-{{user.id}}">
+                        
+                            {% if user.pivot.enviado==1  %}
+                              ya enviado
+                            {% else%}
+                              pendiente
+                            {% endif %}
+                          </td>
+                          <td>
+                              <form
+                                data-request="EnviarMail::onDelete"
+                                data-request-flash>
+                                <input name="user-id" type="hidden" value="{{user.id}}"/>
+                                <span data-validate-for="name"></span>
+                                <button data-attach-loading>
+                                        Borrar
+                                </button>
+                              </form>
+                          </td>
                 </tr>
        
-                {% else %}
-        {{ noRecordsMessage }}
-  
-    {% endfor %}
-  
-              
-              </tbody>
-             
-            </table>
+              {% else %}
+                {{ noRecordsMessage }}
+              {% endfor %}
+            </tbody>
+          </table>
        
             
           </div>

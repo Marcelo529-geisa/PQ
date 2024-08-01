@@ -1,0 +1,84 @@
+1722527919a:1:{s:14:"resultados.htm";a:11:{s:8:"fileName";s:14:"resultados.htm";s:7:"content";s:1488:"title = "Resultados"
+url = "/resultados/:id"
+layout = "fixed"
+is_hidden = 0
+
+[viewBag]
+activeMenu = "Resultados"
+
+[builderDetails]
+modelClass = "Fede\Estudios\Models\Estudio"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "titulo"
+notFoundMessage = "Record not found"
+==
+<?php
+use Fede\Estudios\Models\Estudio as Estudio;
+use Fede\Estudios\Models\Respuesta as Respuesta;
+use October\Rain\Auth\Models\User as User;
+
+function onInit() {
+    $id=$this->param('id');
+    $this['jotason']=  array();
+    $this['respuestas']=Respuesta::where('estudios_id',$id)->get();
+    
+//die();    
+}
+?>
+==
+<div class="row">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+              <h3 class="box-title">     
+                {% if record %}
+                    Respuestas del estudio "{{record.titulo}}"
+                {% else %}
+                    {{ notFoundMessage }}
+                {% endif %}
+             </h3>
+        </div>
+            <!-- /.box-header -->
+    </div>
+</div>
+   <button  class="btn btn-primary" onclick="javascript:location.href='{{ url ('/') }}/punto_dat/{{record.id}}'"><i class="fa fa-arrow-down"></i> .dat</button> 
+   <button  class="btn btn-primary" onclick="javascript:location.href='{{record.id}}'"><i class="fa fa-arrow-down"></i> .json</button> 
+<hr>
+{% for key,respuesta in respuestas %}
+
+    
+
+    <li>{{respuesta.user_id}} --> {{ respuesta.respuestas }}</li>
+    {% endfor %}";s:5:"mtime";i:1721000997;s:6:"markup";s:868:"<div class="row">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+              <h3 class="box-title">     
+                {% if record %}
+                    Respuestas del estudio "{{record.titulo}}"
+                {% else %}
+                    {{ notFoundMessage }}
+                {% endif %}
+             </h3>
+        </div>
+            <!-- /.box-header -->
+    </div>
+</div>
+   <button  class="btn btn-primary" onclick="javascript:location.href='{{ url ('/') }}/punto_dat/{{record.id}}'"><i class="fa fa-arrow-down"></i> .dat</button> 
+   <button  class="btn btn-primary" onclick="javascript:location.href='{{record.id}}'"><i class="fa fa-arrow-down"></i> .json</button> 
+<hr>
+{% for key,respuesta in respuestas %}
+
+    
+
+    <li>{{respuesta.user_id}} --> {{ respuesta.respuestas }}</li>
+    {% endfor %}";s:4:"code";s:315:"use Fede\Estudios\Models\Estudio as Estudio;
+use Fede\Estudios\Models\Respuesta as Respuesta;
+use October\Rain\Auth\Models\User as User;
+
+function onInit() {
+    $id=$this->param('id');
+    $this['jotason']=  array();
+    $this['respuestas']=Respuesta::where('estudios_id',$id)->get();
+    
+//die();    
+}";s:5:"title";s:10:"Resultados";s:3:"url";s:15:"/resultados/:id";s:6:"layout";s:5:"fixed";s:9:"is_hidden";s:1:"0";s:7:"viewBag";a:1:{s:10:"activeMenu";s:10:"Resultados";}s:14:"builderDetails";a:5:{s:10:"modelClass";s:28:"Fede\Estudios\Models\Estudio";s:15:"identifierValue";s:9:"{{ :id }}";s:14:"modelKeyColumn";s:2:"id";s:13:"displayColumn";s:6:"titulo";s:15:"notFoundMessage";s:16:"Record not found";}}}

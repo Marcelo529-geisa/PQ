@@ -1,8 +1,0 @@
-1720986110a:1:{s:21:"actualizar-contra.htm";a:10:{s:8:"fileName";s:21:"actualizar-contra.htm";s:7:"content";s:135:"title = "Actualizar contra"
-url = "/actualizar-contra"
-layout = "fixed"
-is_hidden = 0
-
-[UpdateContra]
-==
-{% component 'UpdateContra' %}";s:5:"mtime";i:1632348559;s:6:"markup";s:30:"{% component 'UpdateContra' %}";s:4:"code";N;s:5:"title";s:17:"Actualizar contra";s:3:"url";s:18:"/actualizar-contra";s:6:"layout";s:5:"fixed";s:9:"is_hidden";s:1:"0";s:12:"UpdateContra";a:0:{}}}

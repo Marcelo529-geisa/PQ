@@ -37,16 +37,12 @@ pageNumber = "{{ :page }}"
     </div>
   </div>
 </div>
-
+{% partial "footer" %}
 <script>
   document.addEventListener("DOMContentLoaded", function (event) {
     navbarFixedTopAnimation();
     closeMenuBeforeGoingToPage();
   });
 </script>
-
-
-
-
 {% partial "pie" %}
 </html>

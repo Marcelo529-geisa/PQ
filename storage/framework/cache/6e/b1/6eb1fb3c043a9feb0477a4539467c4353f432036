@@ -1,0 +1,164 @@
+1722527919a:1:{s:23:"lista-participantes.htm";a:11:{s:8:"fileName";s:23:"lista-participantes.htm";s:7:"content";s:2445:"title = "Lista participantes"
+url = "/lista-participantes/:id"
+layout = "fixed"
+is_hidden = 0
+
+[viewBag]
+activeMenu = "participantes"
+
+[builderDetails]
+modelClass = "Fede\Estudios\Models\Estudio"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "titulo"
+notFoundMessage = "Record not found"
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+<div class="row">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+              <h3 class="box-title">     
+                {% if record %}
+                    Participantes del estudio "{{record.titulo}}"
+                {% else %}
+                    {{ notFoundMessage }}
+                {% endif %}
+             </h3>
+        </div>
+            <!-- /.box-header -->
+    </div>
+</div>
+   <button  class="btn btn-primary" onclick="javascript:location.href='/PQ2/crear-any/{{record.id}}/1'">Agregar</button> 
+<hr>
+
+   <div class="row">
+      <!-- Left col -->
+      <section class="col-lg-12">
+          <div class="box-body">
+            <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+         
+                <table id="example2" class="table table-bordered table-hover">
+              <thead>
+              <tr>
+                  <th>Título</th>
+                <th>Autor</th>
+                <th>Contacto</th>                  
+                <th>Fecha Creación</th>
+                <th>user_id</th>
+              </tr>
+              </thead>
+              <tbody>
+             
+{% for user in record.users %}
+{% set mostrar ='false' %}
+{% for grupos in user.groups %}
+    {% if grupos.id in [1] %}
+        {% set mostrar ='true' %}
+    {% endif %}
+{% endfor %}
+{% if mostrar == 'true' %}
+    <tr>
+                <td>  
+              {{ user.username }}</td>
+                <td>
+                 {{ user.email }}
+                </td>
+                <td></td>
+                <td> </td>
+                <td>{{user.id}}</td>
+              </tr>
+     
+              {% else %}
+      {{ noRecordsMessage }}
+{% endif %}
+  {% endfor %}
+
+            
+              </tbody>
+             
+            </table>
+        
+            
+            
+          </div>
+          <!-- /.box-body -->
+          
+        </div>
+        <!-- /.box -->";s:5:"mtime";i:1721000997;s:6:"markup";s:2132:"{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+<div class="row">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+              <h3 class="box-title">     
+                {% if record %}
+                    Participantes del estudio "{{record.titulo}}"
+                {% else %}
+                    {{ notFoundMessage }}
+                {% endif %}
+             </h3>
+        </div>
+            <!-- /.box-header -->
+    </div>
+</div>
+   <button  class="btn btn-primary" onclick="javascript:location.href='/PQ2/crear-any/{{record.id}}/1'">Agregar</button> 
+<hr>
+
+   <div class="row">
+      <!-- Left col -->
+      <section class="col-lg-12">
+          <div class="box-body">
+            <!-- See dist/js/pages/dashboard.js to activate the todoList plugin -->
+         
+                <table id="example2" class="table table-bordered table-hover">
+              <thead>
+              <tr>
+                  <th>Título</th>
+                <th>Autor</th>
+                <th>Contacto</th>                  
+                <th>Fecha Creación</th>
+                <th>user_id</th>
+              </tr>
+              </thead>
+              <tbody>
+             
+{% for user in record.users %}
+{% set mostrar ='false' %}
+{% for grupos in user.groups %}
+    {% if grupos.id in [1] %}
+        {% set mostrar ='true' %}
+    {% endif %}
+{% endfor %}
+{% if mostrar == 'true' %}
+    <tr>
+                <td>  
+              {{ user.username }}</td>
+                <td>
+                 {{ user.email }}
+                </td>
+                <td></td>
+                <td> </td>
+                <td>{{user.id}}</td>
+              </tr>
+     
+              {% else %}
+      {{ noRecordsMessage }}
+{% endif %}
+  {% endfor %}
+
+            
+              </tbody>
+             
+            </table>
+        
+            
+            
+          </div>
+          <!-- /.box-body -->
+          
+        </div>
+        <!-- /.box -->";s:4:"code";N;s:5:"title";s:19:"Lista participantes";s:3:"url";s:24:"/lista-participantes/:id";s:6:"layout";s:5:"fixed";s:9:"is_hidden";s:1:"0";s:7:"viewBag";a:1:{s:10:"activeMenu";s:13:"participantes";}s:14:"builderDetails";a:5:{s:10:"modelClass";s:28:"Fede\Estudios\Models\Estudio";s:15:"identifierValue";s:9:"{{ :id }}";s:14:"modelKeyColumn";s:2:"id";s:13:"displayColumn";s:6:"titulo";s:15:"notFoundMessage";s:16:"Record not found";}}}

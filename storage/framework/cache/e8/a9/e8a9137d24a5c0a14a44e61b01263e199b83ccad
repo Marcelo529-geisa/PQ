@@ -1,8 +1,0 @@
-1720986110a:1:{s:22:"formulario-estudio.htm";a:10:{s:8:"fileName";s:22:"formulario-estudio.htm";s:7:"content";s:131:"title = "Formulario estudio"
-url = "/formulario-estudio"
-layout = "fixed"
-is_hidden = 0
-
-[FrontForm]
-==
-{% component 'FrontForm' %}";s:5:"mtime";i:1632348559;s:6:"markup";s:27:"{% component 'FrontForm' %}";s:4:"code";N;s:5:"title";s:18:"Formulario estudio";s:3:"url";s:19:"/formulario-estudio";s:6:"layout";s:5:"fixed";s:9:"is_hidden";s:1:"0";s:9:"FrontForm";a:0:{}}}
